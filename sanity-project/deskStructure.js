@@ -1,0 +1,59 @@
+const JAMSTACK_SECTIONS = [
+    {
+      sectionType: 'heroSection',
+      sectionTitle: 'Hero Section',
+    },
+  //   {
+  //     sectionType: 'aboutSections',
+  //     sectionTitle: 'About Sections',
+  //   },
+]
+
+const JAMSTACK_TEMPLATE = [
+    {
+      templateType: 'pages',
+      templateTitle: 'Pages',
+    },
+]
+
+
+export const myStructure = (S) =>
+ S.list()
+    .title('Website')
+    .items([
+        S.listItem()
+          .title('JamStack Site')
+          .child(
+            S.list()
+              .title('JamStack Site')
+              .items([
+                S.listItem()
+                  .title('Sections')
+                  .child(
+                    S.list()
+                      .title('Sections')
+                      .items(
+                        JAMSTACK_SECTIONS.sort((a,b)=>a.sectionTitle.localeCompare(b.sectionTitle)).map((section) => {
+                          return S.listItem()
+                            .title(section.sectionTitle)
+                            .child(S.documentTypeList(section.sectionType))
+                        })
+                      )
+                  ),
+                S.listItem()
+                  .title('Templates')
+                  .child(
+                    S.list()
+                      .title('Templates')
+                      .items(
+                        JAMSTACK_TEMPLATE.sort((a,b)=>a.templateTitle.localeCompare(b.templateTitle)).map((section) => {
+                          return S.listItem()
+                            .title(section.templateTitle)
+                            .child(S.documentTypeList(section.templateType))
+                        })
+                      )
+                  ),
+              ])
+          ),
+        S.divider()
+      ])
