@@ -1,0 +1,51 @@
+// .main_heading {
+//   background-clip: text;
+//   color: #fff;
+//   font-family: Inter;
+//   font-size: 56px;
+//   font-style: normal;
+//   font-weight: 900;
+//   line-height: normal;
+//   text-transform: uppercase;
+//   @media (min-width: 1024px) {
+//     font-size: 100px;
+//   }
+//   .full_stop {
+//     background: var(
+//       --turquoise-blue,
+//       linear-gradient(136deg, #32eaf9 0%, #0075ff 100%)
+//     );
+//     -webkit-background-clip: text;
+//     -webkit-text-fill-color: transparent;
+//   }
+// }
+
+// .animated_image_market {
+//   > path {
+//     fill: linear-gradient(136deg, #32eaf9 0%, #0075ff 100%);
+//   }
+// }
+
+.cta_style {
+  border-radius: 80px;
+  border: 3px solid rgba(128, 128, 128, 0.137);
+  background: radial-gradient(
+      32.08% 32.08% at 49.96% 10.61%,
+      rgba(60, 72, 83, 0.1) 0%,
+      rgba(0, 0, 0, 0.1) 100%
+    ),
+    rgba(0, 16, 56, 0.2);
+  backdrop-filter: blur(2px);
+}
+// .cta_background {
+//   background: linear-gradient(277deg, #ffff 20%, #05013dbe);
+// }
+.cta_gredient_text {
+  background: var(
+    --gradient-3,
+    linear-gradient(90deg, #d3f2ff 0%, #8bb2ff 48.56%, #5c9dcc 100%)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

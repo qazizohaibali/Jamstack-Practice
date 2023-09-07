@@ -1,0 +1,47 @@
+.active-meeting-icon {
+  -webkit-mask: url(../../images/xe-icons/meeting.svg) no-repeat 100% 100%;
+  mask: url(../../images/xe-icons/meeting.svg) no-repeat 100% 100%;
+  -webkit-mask-size: cover;
+  mask-size: cover;
+  width: 20px;
+  height: 20px;
+  background-color: white;
+}
+.simple-meeting-icon {
+  -webkit-mask: url(../../images/xe-icons/meeting.svg) no-repeat 100% 100%;
+  mask: url(../../images/xe-icons/meeting.svg) no-repeat 100% 100%;
+  -webkit-mask-size: cover;
+  mask-size: cover;
+  width: 20px;
+  height: 20px;
+  background-color: #f7f7f765;
+}
+
+.active-message-icon {
+  -webkit-mask: url(../../images/xe-icons/message.svg) no-repeat 100% 100%;
+  mask: url(../../images/xe-icons/message.svg) no-repeat 100% 100%;
+  -webkit-mask-size: cover;
+  mask-size: cover;
+  width: 24px;
+  height: 20px;
+  background-color: white;
+}
+.simple-message-icon {
+  -webkit-mask: url(../../images/xe-icons/message.svg) no-repeat 100% 100%;
+  mask: url(../../images/xe-icons/message.svg) no-repeat 100% 100%;
+  -webkit-mask-size: cover;
+  mask-size: cover;
+  width: 24px;
+  height: 20px;
+  background-color: #f7f7f765;
+}
+
+.contact_form_text_gredient_color {
+  background: var(
+    --gradient-3,
+    linear-gradient(90deg, #d3f2ff 0%, #8bb2ff 48.56%, #5c9dcc 100%)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

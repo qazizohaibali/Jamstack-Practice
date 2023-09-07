@@ -1,0 +1,7 @@
+.mobile_footer_area{
+
+  @media (min-width:1024px) {
+    grid-area: 1/5
+  }
+  grid-area: 2/2;
+}

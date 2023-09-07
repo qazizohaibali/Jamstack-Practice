@@ -1,0 +1,32 @@
+.navbar_menu_box_shadow {
+  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.06),
+    0px 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.solutions_inner_end_container {
+  border-radius: 25px;
+  background: conic-gradient(
+      from 180deg at 50% 50%,
+      rgba(51, 54, 81, 0.2) 137.47251391410828deg,
+      rgba(6, 90, 189, 0.2) 173.58260035514832deg,
+      rgba(51, 54, 81, 0.2) 209.67456579208374deg,
+      rgba(51, 54, 81, 0.2) 283.03064346313477deg,
+      rgba(74, 179, 238, 0.2) 313.1250071525574deg,
+      rgba(51, 54, 81, 0.2) 345.58565855026245deg
+    ),
+    #010d2e;
+  backdrop-filter: blur(2px);
+}
+
+.mega_menu_grid {
+  grid-template-columns: 279px 200px 237px 200px;
+}
+
+.mobile_main_container {
+  @media (min-width: 1024px) {
+    height: auto;
+    overflow: visible;
+  }
+  overflow: auto;
+  height: calc(100vh - 63.39px);
+}

@@ -1,0 +1,49 @@
+.software-card-hover:hover {
+  // filter: drop-shadow(0px 10px 34px 0px rgba(0, 0, 0, 0.25));
+  box-shadow: 0px 10px 34px 0px rgba(0, 0, 0, 0.25);
+  
+  > div {
+    > div:nth-child(1) {
+      > div:nth-child(2) {
+        background: linear-gradient(
+          90deg,
+          #d3f2ff 0%,
+          #8bb2ff 48.56%,
+          #5c9dcc 100%
+          
+        );
+
+        border-radius: 10px;
+        img {
+          opacity: 0.6;
+          mix-blend-mode: multiply;
+        }
+      }
+    }
+    > div:nth-child(2) {
+      background-color: #47a7ff !important;
+
+    }
+  }
+}
+
+.software-card-hover {
+>div{
+  >div:nth-child(1){
+    >div:nth-child(2){
+      transition: background ease-in-out 0.3s; 
+      background:none ; 
+    }
+    >img{
+      opacity: 1;
+      mix-blend-mode: normal;
+      transition: mix-blend-mode ease-in-out 0.3s;
+    }
+  }
+  >div:nth-child(2){
+    transition: background-color ease-in-out 0.3s; 
+    background-color: #6DBBE7;
+
+  }
+}
+}

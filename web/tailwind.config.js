@@ -1,0 +1,51 @@
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  mode: 'jit',
+  content: [
+    './src/pages/**/*.{js,jsx,ts,tsx}',
+    './src/components/**/*.{js,jsx,ts,tsx}',
+    './src/sections/**/*.{js,jsx,ts,tsx}',
+  ],
+  theme: {
+    extend: {
+      fontFamily: {
+        inter: ['"Inter", sans-serif'],
+        Rubik: ["'Rubik', sans-serif"],
+        Mulish: ["'Mulish', sans-serif"],
+        Lato: ["'Lato', sans-serif"],
+      },
+      colors: {
+        'gray-50': '#F7F7F7',
+        'gray-100': '#E6E6E6',
+        'gray-200': '#CCCCCC',
+        'gray-300': '#B2B2B2',
+        'gray-400': '#999999',
+        'gray-500': '#808080',
+        'gray-600': '#666666',
+        'gray-700': '#4D4D4D',
+        'gray-800': '#333333',
+        'gray-900': '#1A1A1A',
+        black: '#000000',
+        white: '#FFFFFF',
+        primary_blue_600: '#4D6AFF',
+        primary_blue_100: '#e4f1ff',
+        blue_700: '#70C5DF',
+        blue_600: '#6DBBE7',
+        blue_400: '#47A7FF',
+        primary_dark_blue_1: '#010D2E',
+        typography_heading: '#05315A',
+        typography_body: '#575A66',
+        typography_heading_white: '#F7F7F7',
+        typography_body_white: '#d7d8e0',
+      },
+      transitionProperty: {
+        width: 'width',
+        height: 'height',
+        'max-w': 'max-width',
+        gap: 'gap',
+        p: 'padding',
+      },
+    },
+  },
+  plugins: [],
+}

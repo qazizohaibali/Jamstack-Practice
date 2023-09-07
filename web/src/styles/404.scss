@@ -1,0 +1,24 @@
+.rotate_image {
+  animation: rotation 5s infinite linear;
+}
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+.background_color_1 {
+  background: #010d2e;
+}
+.background_color_1::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  height: 407px;
+  background: linear-gradient(180deg, rgba(1, 13, 46, 0) 0%, #010d2e 100%);
+}
