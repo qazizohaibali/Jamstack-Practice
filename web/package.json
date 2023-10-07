@@ -20,6 +20,7 @@
     "gatsby-plugin-manifest": "^5.0.0",
     "gatsby-plugin-sass": "^6.0.0",
     "gatsby-plugin-sharp": "^5.0.0",
+    "gatsby-plugin-sitemap": "3.3.0",
     "gatsby-source-filesystem": "^5.0.0",
     "gatsby-transformer-sharp": "^5.0.0",
     "gbimage-bridge": "^0.2.2",
