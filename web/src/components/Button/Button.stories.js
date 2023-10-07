@@ -16,9 +16,8 @@ export default {
       options: [
         'primary',
         'secondary',
-        'cta-button',
-        'text-link-dark',
-        'text-link-light',
+        'fill-white',
+        'fill-transparent',
       ],
       control: { type: 'select' },
     },
@@ -43,21 +42,15 @@ ButtonSecondary.args = {
   label: 'Get A Quote',
   onClick,
 }
-export const ButtonCta = Template.bind({})
-ButtonCta.args = {
-  variant: 'cta-button',
+export const fillWhite = Template.bind({})
+fillWhite.args = {
+  variant: 'fill-white',
   label: 'Get A Quote',
   onClick,
 }
 export const ButtonTextLinkDark = Template.bind({})
 ButtonTextLinkDark.args = {
-  variant: 'text-link-dark',
-  label: 'Get A Quote',
-  onClick,
-}
-export const ButtonTextLinkLight = Template.bind({})
-ButtonTextLinkLight.args = {
-  variant: 'text-link-light',
+  variant: 'fill-transparent',
   label: 'Get A Quote',
   onClick,
 }
