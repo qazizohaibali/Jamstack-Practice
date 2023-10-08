@@ -49,7 +49,7 @@ export const Layout = ({ children, isCtaEnabled }) => {
         />
       </div>
       <main>{childrenWithProps}</main>
-      {isCtaEnabled && <Cta toggleFunc={toggleFunc} />}
+      <Cta toggleFunc={toggleFunc} />
       <Footer toggleFunc={toggleFunc} />
     </>
   )

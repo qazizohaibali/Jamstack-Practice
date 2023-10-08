@@ -8,7 +8,7 @@ import '../styles/404.scss'
 
 const NotFoundPage = () => (
   <Layout isCtaEnabled={false}>
-    <div className="mt-[63.39px] lg:mt-[83px]  py-[300px] background_color_1 lg:pt-[268px] lg:pb-[448px] relative">
+    <div className="mt-[63.39px] lg:mt-[83px] py-[300px] bg-[#424242] lg:pt-[268px] lg:pb-[268px] relative">
       <div className="max-w-[1512px] px-4 lg:px-[250px] xl:px-[385px] flex flex-col gap-6 justify-center items-center mx-auto">
         <Heading
           type="h1"
@@ -21,12 +21,6 @@ const NotFoundPage = () => (
           changed, or is temporarily unavailable. Click the button below to
           return to the XenaTech home page.
         </p>
-        <Button variant="text-link-dark" label="Go Home" />
-        <img
-          src={bottomImage}
-          alt=""
-          className="absolute -bottom-20 lg:-bottom-[155px] w-[260px] lg:w-[570px] rotate_image"
-        />
       </div>
     </div>
   </Layout>
