@@ -3,10 +3,10 @@ const JAMSTACK_SECTIONS = [
       sectionType: 'heroSection',
       sectionTitle: 'Hero Section',
     },
-  //   {
-  //     sectionType: 'aboutSections',
-  //     sectionTitle: 'About Sections',
-  //   },
+    {
+      sectionType: 'servicesSection',
+      sectionTitle: 'Services Section',
+    },
 ]
 
 const JAMSTACK_TEMPLATE = [
