@@ -21,28 +21,22 @@ export default {
         type: 'bodyPortableText',
         validation: (Rule) => Rule.required(),
       },
-    //   {
-    //     title: 'mobile Background Image',
-    //     name: 'mobileBackgroundImage',
-    //     type: 'customImage',
-    //     validation: (Rule) => Rule.required(),
-    //   },
-    //   {
-    //     title: 'Desktop Background Image',
-    //     name: 'desktopBackgroundImage',
-    //     type: 'customImage',
-    //     validation: (Rule) => Rule.required(),
-    //   },
-    //   {
-    //     title: 'ImagesCards',
-    //     name: 'imagesCards',
-    //     type: 'array',
-    //     of: [
-    //       {
-    //         type: 'logoCard',
-    //       },
-    //     ],
-    //   },
+      {
+        title: 'Image',
+        name: 'image',
+        type: 'customImage',
+        validation: (Rule) => Rule.required(),
+      },
+      {
+        title: 'Buttons',
+        name: 'button',
+        type: 'array',
+        of:[{
+          type:'button'
+        }]
+      },
+
+   
     ],
     preview: {
       select: {

@@ -51,6 +51,16 @@ export default {
           },
           to: [{type: 'heroSection'}],
         },
+        {
+          title: 'Intro Section',
+          name: 'introSection',
+          type: 'reference',
+          validation: (Rule) => Rule.required(),
+          options: {
+            disableNew: true,
+          },
+          to: [{type: 'introSection'}],
+        },
       ],
     },
   ],

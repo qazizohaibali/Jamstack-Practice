@@ -1,4 +1,5 @@
 import heroSection from "./documents/heroSection";
+import introSection from "./documents/introSection";
 import pages from "./documents/pages";
 import servicesSection from "./documents/servicesSection";
 import bodyPortableText from "./objects/bodyPortableText";
@@ -18,6 +19,7 @@ export const schemaTypes = [
 heroSection,
 pages,
 servicesSection,
+introSection,
 // objects
 bodyPortableText,
 button,
