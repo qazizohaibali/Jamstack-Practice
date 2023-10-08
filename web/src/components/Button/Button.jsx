@@ -18,13 +18,13 @@ export const Button = ({
   const buttonClasses = clsx(
     otherClasses,
     variant === 'primary' &&
-      `px-8 py-3 primary_button text-base font-inter font-medium text-white leading-6 uppercase`,
+      `px-8 py-3 primary_button text-base font-Montserrat font-medium text-white leading-6 uppercase`,
     variant === 'secondary' &&
-      `px-8 py-3 secondary_button text-base font-inter font-medium text-white leading-6 uppercase`,
+      `px-8 py-3 secondary_button text-base font-Montserrat font-medium text-white leading-6 uppercase`,
     variant === 'fill-white' &&
-      `px-8 py-3 fill-white text-base font-inter font-medium text-white uppercase`,
+      `px-6 py-5 fill-white text-base font-Montserrat font-semibold text-[#2F3034] uppercase`,
     variant === 'fill-transparent' &&
-      `text-base bg-transparent border-2 border-white leading-6 font-medium font-inter text-typography_heading_white px-8 py-3`,
+      `text-base bg-transparent border-2 border-white ring-offset-0 leading-6 font-medium font-Montserrat text-typography_heading_white px-6 py-[18px] uppercase`,
   )
 
   const withLinkDarkIcon = variant === 'text-link-dark'
