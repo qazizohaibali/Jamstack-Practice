@@ -29,7 +29,7 @@ export default {
       },
       {
         title: 'Buttons',
-        name: 'button',
+        name: 'buttons',
         type: 'array',
         of:[{
           type:'button'
