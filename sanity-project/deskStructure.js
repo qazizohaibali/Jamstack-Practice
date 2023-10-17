@@ -11,6 +11,10 @@ const JAMSTACK_SECTIONS = [
       sectionType: 'introSection',
       sectionTitle: 'Intro Section',
     },
+    {
+      sectionType: 'ourProjectsSection',
+      sectionTitle: 'Our Projects Section',
+    },
 ]
 
 const JAMSTACK_TEMPLATE = [
