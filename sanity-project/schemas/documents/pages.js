@@ -61,6 +61,16 @@ export default {
           },
           to: [{type: 'introSection'}],
         },
+        {
+          title: 'Services Section',
+          name: 'servicesSection',
+          type: 'reference',
+          validation: (Rule) => Rule.required(),
+          options: {
+            disableNew: true,
+          },
+          to: [{type: 'servicesSection'}],
+        },
       ],
     },
   ],

@@ -38,6 +38,7 @@ export const ServicesSection = ({
 export default ServicesSection
 export const query = graphql`
   fragment servicesSection on SanityServicesSection {
+    __typename
     identifier
     mainHeading
     _rawSubText
