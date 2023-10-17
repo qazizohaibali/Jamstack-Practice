@@ -30,20 +30,12 @@ export default {
     {
       title: 'First Button',
       name: 'firstButton',
-      of: [
-        {
-          type: 'button',
-        },
-      ],
+      type: 'button',
     },
     {
       title: 'Second Button',
       name: 'secondButton',
-      of: [
-        {
-          type: 'button',
-        },
-      ],
+      type: 'button',
     },
   ],
   preview: {
