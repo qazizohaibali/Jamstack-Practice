@@ -20,28 +20,14 @@ export const Head = ({
 
 export default IndexPage
 
-// export const query = graphql`
-//   query PageQuery($id: String!) {
-//     page: sanityPages(id: { eq: $id }) {
-//       seoTitle
-//       metaDescription
-//       pageBuilder {
-//         ...HeroSection
-//         ...ServicesSection
-//         ...WhyUsSection
-//         ...TestimonialsSection
-//         ...BlogSectionReference
-//         ...AboutHeroSection
-//         ...OurStorySection
-//         ...BlogHubSection
-//         ...MiniHeroSection
-//         ...ReviewReferenceSection
-//         ...SubHeroSection
-//         ...MeetTheTeamReference
-//         ...ServicesHubSection
-//         ...MeetTheTeamTwoColumn
-//         ...PrivacyPolicy
-//       }
-//     }
-//   }
-// `
+export const query = graphql`
+  query PageQuery($id: String!) {
+    page: sanityPages(id: { eq: $id }) {
+      seoTitle
+      metaDescription
+      pageBuilder {
+        ...IntroSection
+      }
+    }
+  }
+`
