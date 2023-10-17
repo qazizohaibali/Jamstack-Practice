@@ -26,6 +26,7 @@ export const query = graphql`
       seoTitle
       metaDescription
       pageBuilder {
+        ...HeroSection
         ...IntroSection
         ...servicesSection
       }

@@ -1,11 +1,15 @@
 import React from 'react'
 import IntroSection from '../../sections/IntroSection/IntroSection'
 import ServicesSection from '../../sections/ServicesSection/ServicesSection'
+import HeroSection from '../../sections/HeroSection/HeroSection'
 
 export const EntryRenderer = ({ pageBuilderData, ...props }) => {
   return pageBuilderData.map(({ __typename, ...sectionData }, index) => {
     switch (__typename) {
-      
+      case 'SanityHeroSection':
+        return (
+          <HeroSection key={__typename} {...sectionData} {...props} />
+        )
       case 'SanityIntroSection':
         return (
           <IntroSection key={__typename} {...sectionData} {...props} />
