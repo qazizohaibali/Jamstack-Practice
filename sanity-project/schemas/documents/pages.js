@@ -81,6 +81,16 @@ export default {
           },
           to: [{type: 'ourProductsSection'}],
         },
+        {
+          title: 'Faqs Section',
+          name: 'faqsSection',
+          type: 'reference',
+          validation: (Rule) => Rule.required(),
+          options: {
+            disableNew: true,
+          },
+          to: [{type: 'faqsSection'}],
+        },
       ],
     },
   ],

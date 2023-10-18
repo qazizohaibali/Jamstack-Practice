@@ -1,3 +1,4 @@
+import faqsSection from "./documents/faqsSection";
 import heroSection from "./documents/heroSection";
 import introSection from "./documents/introSection";
 import ourProductsSection from "./documents/ourProductsSection";
@@ -7,6 +8,7 @@ import servicesSection from "./documents/servicesSection";
 import bodyPortableText from "./objects/bodyPortableText";
 import button from "./objects/button";
 import checklist from "./objects/checklist";
+import faqsCard from "./objects/faqsCard";
 import founderVideoCard from "./objects/founderVideoCard";
 import iframe from "./objects/iframe";
 import image from "./objects/image";
@@ -26,9 +28,11 @@ servicesSection,
 introSection,
 ourProjectsSection,
 ourProductsSection,
+faqsSection,
 // objects
 bodyPortableText,
 ourProductCard,
+faqsCard,
 button,
 checklist,
 iframe,
