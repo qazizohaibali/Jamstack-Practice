@@ -71,6 +71,16 @@ export default {
           },
           to: [{type: 'servicesSection'}],
         },
+        {
+          title: 'Our Products Section',
+          name: 'ourProductsSection',
+          type: 'reference',
+          validation: (Rule) => Rule.required(),
+          options: {
+            disableNew: true,
+          },
+          to: [{type: 'ourProductsSection'}],
+        },
       ],
     },
   ],
