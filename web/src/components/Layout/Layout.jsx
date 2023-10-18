@@ -27,7 +27,7 @@ export const Layout = ({ children, isCtaEnabled }) => {
 
   return (
     <>
-      {/* <Navbar toggleFunc={toggleFunc} /> */}
+      <Navbar toggleFunc={toggleFunc} />
       <div
         className={clsx(
           'w-full fixed top-0 right-0 flex justify-end h-full z-[100] overflow-hidden',
