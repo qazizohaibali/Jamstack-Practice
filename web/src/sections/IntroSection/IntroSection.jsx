@@ -16,7 +16,7 @@ export const IntroSection = ({
   _rawSubText,
   _rawSecSubText,
 }) => {
-  const introSectionClasses = clsx(otherClasses, 'bg-[#2E3034] text-white')
+  const introSectionClasses = clsx(otherClasses, 'bg-[#2f3034] text-white')
 
   return (
     <section className={introSectionClasses} data-testid="intro-section">
