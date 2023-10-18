@@ -1,0 +1,14 @@
+.slick-slider {
+  .slick-track {
+    display: flex;
+    justify-content: center;
+    .slick-current {
+      display: flex;
+      justify-content: center;
+      @media (min-width: 1024px) {
+        margin-right: 40px;
+        justify-content: none;
+      }
+    }
+  }
+}
