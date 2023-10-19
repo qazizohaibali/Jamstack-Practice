@@ -1,5 +1,5 @@
 import * as React from 'react'
-
+import mocks from './mocks'
 import OurProductSection from './OurProductSection'
 
 export default {
@@ -10,4 +10,4 @@ export default {
 const Template = (args) => <OurProductSection {...args} />
 
 export const Default = Template.bind({})
-Default.args = {}
+Default.args = {...mocks}
