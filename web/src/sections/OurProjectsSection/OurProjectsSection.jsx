@@ -73,7 +73,7 @@ export const OurProjectsSection = ({
                   playing
                   className="relative min-h-[400px]"
                   playIcon={
-                    <span className="max-w-[50px] absolute">
+                    <span className="max-w-[80px] absolute">
                     <img src={playIcon} alt=''/>
                     </span>
                   }
