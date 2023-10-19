@@ -72,14 +72,14 @@ export default {
           to: [{type: 'servicesSection'}],
         },
         {
-          title: 'Our Products Section',
-          name: 'ourProductsSection',
+          title: 'Our Projects Section',
+          name: 'ourProjectsSection',
           type: 'reference',
           validation: (Rule) => Rule.required(),
           options: {
             disableNew: true,
           },
-          to: [{type: 'ourProductsSection'}],
+          to: [{type: 'ourProjectsSection'}],
         },
         {
           title: 'Faqs Section',
@@ -90,6 +90,16 @@ export default {
             disableNew: true,
           },
           to: [{type: 'faqsSection'}],
+        },
+        {
+          title: 'Our Products Section',
+          name: 'ourProductsSection',
+          type: 'reference',
+          validation: (Rule) => Rule.required(),
+          options: {
+            disableNew: true,
+          },
+          to: [{type: 'ourProductsSection'}],
         },
       ],
     },
