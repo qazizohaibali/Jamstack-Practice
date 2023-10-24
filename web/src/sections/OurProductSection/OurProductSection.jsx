@@ -6,6 +6,8 @@ import Image from '../../components/Image/Image'
 
 import './ourproductsection.scss'
 
+import { graphql } from 'gatsby'
+
 export const OurProductSection = ({
   otherClasses,
   heading,
