@@ -101,6 +101,16 @@ export default {
           },
           to: [{type: 'ourProductsSection'}],
         },
+        {
+          title: 'Social Media Section',
+          name: 'socialMediaSection',
+          type: 'reference',
+          validation: (Rule) => Rule.required(),
+          options: {
+            disableNew: true,
+          },
+          to: [{type: 'socialMediaSection'}],
+        },
       ],
     },
   ],
