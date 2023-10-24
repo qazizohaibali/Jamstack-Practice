@@ -23,6 +23,10 @@ const JAMSTACK_SECTIONS = [
       sectionType: 'faqsSection',
       sectionTitle: 'Faqs Section',
     },
+    {
+      sectionType: 'socialMediaSection',
+      sectionTitle: 'Social Media Section',
+    },
 ]
 
 const JAMSTACK_TEMPLATE = [

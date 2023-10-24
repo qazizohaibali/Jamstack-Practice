@@ -5,6 +5,7 @@ import ourProductsSection from "./documents/ourProductsSection";
 import ourProjectsSection from "./documents/ourProjectsSection";
 import pages from "./documents/pages";
 import servicesSection from "./documents/servicesSection";
+import socialMediaSection from "./documents/socialMediaSection";
 import bodyPortableText from "./objects/bodyPortableText";
 import button from "./objects/button";
 import checklist from "./objects/checklist";
@@ -16,6 +17,7 @@ import nestedList from "./objects/nestedList";
 import ourProductCard from "./objects/ourProductCard";
 import ourProjectsCard from "./objects/ourProjectsCard";
 import ourServicesCard from "./objects/ourServicesCard";
+import socialMediaCard from "./objects/socialMediaCard";
 import video from "./objects/video";
 import youtube from "./objects/youtube";
 
@@ -29,6 +31,7 @@ introSection,
 ourProjectsSection,
 ourProductsSection,
 faqsSection,
+socialMediaSection,
 // objects
 bodyPortableText,
 ourProductCard,
@@ -42,5 +45,6 @@ youtube,
 nestedList,
 founderVideoCard,
 ourServicesCard,
-ourProjectsCard
+ourProjectsCard,
+socialMediaCard
 ]
