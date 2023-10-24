@@ -16,7 +16,7 @@ module.exports = {
         black: '#000000',
         white: '#FFFFFF',
         typography_body: '#575A66',
-        typography_heading_white: '#F7F7F7',
+        typography_heading_white: '#FAFAFA',
       },
       transitionProperty: {
         width: 'width',
