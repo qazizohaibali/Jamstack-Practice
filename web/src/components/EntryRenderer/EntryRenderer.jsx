@@ -5,6 +5,7 @@ import HeroSection from '../../sections/HeroSection/HeroSection'
 import OurProjectsSection from '../../sections/OurProjectsSection/OurProjectsSection'
 import OurProductSection from '../../sections/OurProductSection/OurProductSection'
 import SocialMediaSection from '../../sections/SocialMediaSection/SocialMediaSection'
+import FaQsSection from '../../sections/FaQsSection/FaQsSection'
 
 export const EntryRenderer = ({ pageBuilderData, ...props }) => {
   return pageBuilderData.map(({ __typename, ...sectionData }, index) => {
@@ -33,6 +34,10 @@ export const EntryRenderer = ({ pageBuilderData, ...props }) => {
           return (
             <SocialMediaSection key={__typename} {...sectionData} {...props} />
           )  
+          case 'SanityFaqsSection':
+          return (
+            <FaQsSection key={__typename} {...sectionData} {...props} />
+          )
         
       default:
         return null

@@ -1,0 +1,62 @@
+.accordions_rich_text {
+    > p {
+      &:nth-last-child(1) {
+        margin-bottom: 0px;
+      }
+      color: #7c8089;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 24px;
+      margin-bottom: 24px;
+      > a {
+        color: #209ea6;
+        text-decoration: underline;
+      }
+    }
+    > h4 {
+      font-size: 30px;
+      font-family: Lato;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      color: #1a1a1a;
+      margin-bottom: 24px;
+    }
+    > ul {
+      list-style: disc;
+      padding-left: 20px;
+      > li {
+        color: #7c8089;
+        font-family: 'DM Sans', sans-serif;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 24px;
+        margin-bottom: 24px;
+        margin-bottom: 8px;
+        &:nth-last-child(1) {
+          margin-bottom: 0px;
+        }
+      }
+    }
+    > ol {
+      list-style: disc;
+      padding-left: 20px;
+      > li {
+        color: #7c8089;
+        font-family: 'DM Sans', sans-serif;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 24px;
+        margin-bottom: 24px;
+        margin-bottom: 8px;
+        &:nth-last-child(1) {
+          margin-bottom: 0px;
+        }
+      }
+    }
+  }
+  
