@@ -118,10 +118,16 @@ export const Footer = ({ otherClasses, toggleFunc }) => {
               &copy; {Year} Shakseyat All Rights Reserved
             </p>
           </div>
-          <div className='flex items-center gap-6'>
-            <Icon icon="facebook" iconHeight={24} iconWidth={24} />
-            <Icon icon="linkedin" iconHeight={24} iconWidth={24} />
-            <Icon icon="twitter" iconHeight={24} iconWidth={24} />
+          <div className="flex items-center gap-6">
+            <a rel="noopener noreferrer" target='_blank' href="http://www.facebook.com">
+              <Icon icon="fb-icon" iconHeight={25} iconWidth={25} />
+            </a>
+            <a rel="noopener noreferrer" target='_blank' href="http://www.instagram.com">
+              <Icon icon="instagram-icon" iconHeight={25} iconWidth={25} />
+            </a>
+            <a rel="noopener noreferrer" target='_blank' href="http://www.twitter.com">
+              <Icon icon="twitter-icon" iconHeight={23} iconWidth={23} />
+            </a>
           </div>
         </div>
       </div>
