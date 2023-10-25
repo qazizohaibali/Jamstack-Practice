@@ -21,7 +21,7 @@ module.exports = {
     description:
       'For Practice of JamStack Development',
     author: 'zohaib',
-    siteUrl: 'jamstackpractice.com',
+    siteUrl: 'https://jamstackpractice.com/',
   },
   trailingSlash: 'always',
 
