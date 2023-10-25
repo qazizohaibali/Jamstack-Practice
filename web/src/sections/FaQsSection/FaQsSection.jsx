@@ -19,7 +19,7 @@ export const FaQsSection = ({
     <section className={faQsSectionClasses} data-testid="fa-qs-section">
       <div className='max-w-[1512px] mx-auto lg:px-[70px] xl:px-[150px] px-4 lg:py-20 py-10'>
         <div className=" text-center max-w-[800px] mx-auto">
-          <Heading otherClasses="" type="h4">
+          <Heading otherClasses=" mb-6 text-center" type="h2">
             {heading}
           </Heading>
           <RichText richText={_rawSubText} otherClasses="ourproduct-richtext" />
