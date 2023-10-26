@@ -111,6 +111,16 @@ export default {
           },
           to: [{type: 'socialMediaSection'}],
         },
+        {
+          title: 'Mini Hero Section',
+          name: 'miniHeroSection',
+          type: 'reference',
+          validation: (Rule) => Rule.required(),
+          options: {
+            disableNew: true,
+          },
+          to: [{type: 'miniHeroSection'}],
+        },
       ],
     },
   ],
