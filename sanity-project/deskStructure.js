@@ -27,6 +27,10 @@ const JAMSTACK_SECTIONS = [
       sectionType: 'socialMediaSection',
       sectionTitle: 'Social Media Section',
     },
+    {
+      sectionType: 'miniHeroSection',
+      sectionTitle: 'Mini Hero Section',
+    },
 ]
 
 const JAMSTACK_TEMPLATE = [

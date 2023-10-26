@@ -1,6 +1,7 @@
 import faqsSection from "./documents/faqsSection";
 import heroSection from "./documents/heroSection";
 import introSection from "./documents/introSection";
+import miniHeroSection from "./documents/miniHeroSection";
 import ourProductsSection from "./documents/ourProductsSection";
 import ourProjectsSection from "./documents/ourProjectsSection";
 import pages from "./documents/pages";
@@ -32,6 +33,7 @@ ourProjectsSection,
 ourProductsSection,
 faqsSection,
 socialMediaSection,
+miniHeroSection,
 // objects
 bodyPortableText,
 ourProductCard,
