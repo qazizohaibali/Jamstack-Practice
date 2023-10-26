@@ -31,6 +31,10 @@ const JAMSTACK_SECTIONS = [
       sectionType: 'miniHeroSection',
       sectionTitle: 'Mini Hero Section',
     },
+    {
+      sectionType: 'featuredTextSection',
+      sectionTitle: 'Featured Text Section',
+    },
 ]
 
 const JAMSTACK_TEMPLATE = [

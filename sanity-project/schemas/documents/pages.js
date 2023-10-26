@@ -121,6 +121,16 @@ export default {
           },
           to: [{type: 'miniHeroSection'}],
         },
+        {
+          title: 'Featured Text Section',
+          name: 'featuredTextSection',
+          type: 'reference',
+          validation: (Rule) => Rule.required(),
+          options: {
+            disableNew: true,
+          },
+          to: [{type: 'featuredTextSection'}],
+        },
       ],
     },
   ],

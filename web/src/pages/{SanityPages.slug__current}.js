@@ -34,6 +34,7 @@ export const query = graphql`
         ...SocialMediaSection
         ...FaqsSection
         ...MiniHeroSection
+        ...FeaturedTextSection
       }
     }
   }
