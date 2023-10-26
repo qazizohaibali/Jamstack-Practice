@@ -6,54 +6,47 @@ import Heading from '../Heading'
 
 import './contactform.scss'
 
-function encode(data) {
-  const formData = new FormData()
-  for (const key of Object.keys(data)) {
-    formData.append(key, data[key])
-  }
-  return formData
-}
 
 export const ContactForm = ({ otherClasses, toggleCancel, nodes }) => {
   const contactFormClasses = clsx(
     otherClasses,
-    'max-w-[720px] bg-primary_dark_blue_1 overflow-y-auto h-full relative'
+    ''
   )
 
-  const messageRef = useRef('')
-  const [state, setState] = useState({})
-  const handleChange = (e) => {
-    setState((state) => ({
-      ...state,
-      [e.target.name]: e.target.value,
-    }))
-  }
+  // const messageRef = useRef('')
+  // const [state, setState] = useState({})
+  // const handleChange = (e) => {
+  //   setState((state) => ({
+  //     ...state,
+  //     [e.target.name]: e.target.value,
+  //   }))
+  // }
 
-  const [active, setActive] = useState('message')
+  // const [active, setActive] = useState('message')
 
-  const activeToggle = (elm) => {
-    setActive(elm)
-  }
+  // const activeToggle = (elm) => {
+  //   setActive(elm)
+  // }
 
-  const handleSubmit = async (e) => {
-    e.preventDefault()
-    const form = e.target
-    try {
-      await fetch('/', {
-        method: 'POST',
-        body: encode({
-          'form-name': form.getAttribute('name'),
-          ...state,
-        }),
-      })
-      messageRef.current.innerHTML =
-        'Thank you for for submission! We will get in touch with you shortly.'
-      setState({})
-      form.reset()
-    } catch (error) {
-      console.error(error)
-    }
-  }
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault()
+  //   const form = e.target
+  //   try {
+  //     await fetch('/', {
+  //       method: 'POST',
+  //       body: encode({
+  //         'form-name': form.getAttribute('name'),
+  //         ...state,
+  //       }),
+  //     })
+  //     messageRef.current.innerHTML =
+  //       'Thank you for for submission! We will get in touch with you shortly.'
+  //     setState({})
+  //     form.reset()
+  //   } catch (error) {
+  //     console.error(error)
+  //   }
+  // }
 
   return (
     <div className={contactFormClasses} data-testid="contact-form">
@@ -70,64 +63,18 @@ export const ContactForm = ({ otherClasses, toggleCancel, nodes }) => {
       </div>
 
       <div className="pb-10 px-4 md:px-[84px] w-full ">
-        <Heading
-          type="h3"
-          otherClasses="text-center text-3xl font-Rubik font-bold contact_form_text_gredient_color my-8"
-        >
-          Contact Us Heading
-        </Heading>
-        <div className="flex items-center mb-8 rounded-full bg-gray-600/20 overflow-hidden">
-          <button
-            onClick={() => activeToggle('meeting')}
-            className={clsx(
-              'w-full flex items-center justify-center gap-2 py-3 font-Lato text-xs sm:text-[15px] whitespace-nowrap font-semibold leading-[18px] tracking-[0.42px] text-white uppercase cursor-pointer',
-              active === 'meeting'
-                ? 'bg-primary_blue_600 opacity-100 rounded-full'
-                : 'opacity-20'
-            )}
-          >
-            <Icon
-              otherClasses={clsx(
-                active === 'meeting'
-                  ? 'active-meeting-icon'
-                  : 'simple-meeting-icon'
-              )}
-            />{' '}
-            <span>Book a meeting</span>{' '}
-          </button>
-          <button
-            onClick={() => activeToggle('message')}
-            className={clsx(
-              'w-full flex items-center justify-center gap-2 py-3 font-Lato text-xs sm:text-[15px] whitespace-nowrap font-semibold leading-[18px] tracking-[0.42px] text-white uppercase cursor-pointer',
-              active === 'message'
-                ? 'bg-primary_blue_600 opacity-100 rounded-full'
-                : 'opacity-20'
-            )}
-          >
-            <Icon
-              otherClasses={clsx(
-                active === 'message'
-                  ? 'active-message-icon'
-                  : 'simple-message-icon'
-              )}
-            />{' '}
-            <span>Send us a message</span>
-          </button>
-        </div>
+        
         <form
           method="post"
           onSubmit={handleSubmit}
           action=""
           name="Contact Us"
           // data-netlify="true"
-          className={clsx(
-            'w-full mt-5 md:mt-8',
-            active === 'message' ? 'block' : 'hidden'
-          )}
+         
         >
           <p
             className="font-inter text-white  text-base font-bold mb-4"
-            ref={messageRef}
+            // ref={messageRef}
           ></p>
 
           <div className="mb-5">
@@ -142,7 +89,7 @@ export const ContactForm = ({ otherClasses, toggleCancel, nodes }) => {
               id="name"
               required
               type="text"
-              onChange={handleChange}
+              // onChange={handleChange}
               className="w-full border-[1px]  pl-4 font-inter bg-transparent text-white  h-12 mt-2 outline-none focus:border-blue-600"
             />
           </div>
@@ -158,7 +105,7 @@ export const ContactForm = ({ otherClasses, toggleCancel, nodes }) => {
                 name="phone"
                 id="phone"
                 required
-                onChange={handleChange}
+                // onChange={handleChange}
                 type="number"
                 className="w-full border-[1px]  pl-4 font-inter bg-transparent text-white  h-12 mt-2 outline-none focus:border-blue-600"
               />
@@ -175,7 +122,7 @@ export const ContactForm = ({ otherClasses, toggleCancel, nodes }) => {
                 id="email"
                 required
                 type="email"
-                onChange={handleChange}
+                // onChange={handleChange}
                 className="w-full border-[1px]  pl-4 font-inter bg-transparent text-white  h-12 mt-2 outline-none focus:border-blue-600"
               />
             </div>
@@ -192,7 +139,7 @@ export const ContactForm = ({ otherClasses, toggleCancel, nodes }) => {
               id="what-can-we-help-you-with"
               type="text"
               required
-              onChange={handleChange}
+              // onChange={handleChange}
               className="w-full border border-gray-300 bg-transparent flex justify-between px-4 h-12 items-center text-base text-gray-300 font-normal font-Mulish outline-none  focus:border-primary_blue_600 "
             >
               <option value="" className="text-gray-900">
@@ -224,7 +171,7 @@ export const ContactForm = ({ otherClasses, toggleCancel, nodes }) => {
             </label>
             <textarea
               type="text"
-              onChange={handleChange}
+              // onChange={handleChange}
               name="description"
               id="description"
               cols="30"
@@ -234,14 +181,7 @@ export const ContactForm = ({ otherClasses, toggleCancel, nodes }) => {
           </div>
           <Button label="Submit" />
         </form>
-        <div className={clsx(active === 'meeting' ? 'block' : 'hidden')}>
-          <iframe
-            src="https://calendly.com/jwoodfin-k4o/demo?month=2023-08"
-            frameborder="0"
-            width="100%"
-            height="500px"
-          ></iframe>
-        </div>
+        
       </div>
     </div>
   )
