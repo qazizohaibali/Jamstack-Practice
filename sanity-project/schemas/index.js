@@ -1,3 +1,4 @@
+import aboutIntroSection from "./documents/aboutIntroSection";
 import faqsSection from "./documents/faqsSection";
 import featuredTextsection from "./documents/featuredTextsection";
 import heroSection from "./documents/heroSection";
@@ -36,6 +37,7 @@ faqsSection,
 socialMediaSection,
 miniHeroSection,
 featuredTextsection,
+aboutIntroSection,
 // objects
 bodyPortableText,
 ourProductCard,

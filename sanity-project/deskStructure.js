@@ -35,6 +35,10 @@ const JAMSTACK_SECTIONS = [
       sectionType: 'featuredTextSection',
       sectionTitle: 'Featured Text Section',
     },
+    {
+      sectionType: 'aboutIntroSection',
+      sectionTitle: 'About Intro Section',
+    },
 ]
 
 const JAMSTACK_TEMPLATE = [
