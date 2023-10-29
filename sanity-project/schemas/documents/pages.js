@@ -131,6 +131,16 @@ export default {
           },
           to: [{type: 'featuredTextSection'}],
         },
+        {
+          title: 'About Intro Section',
+          name: 'aboutIntroSection',
+          type: 'reference',
+          validation: (Rule) => Rule.required(),
+          options: {
+            disableNew: true,
+          },
+          to: [{type: 'aboutIntroSection'}],
+        },
       ],
     },
   ],

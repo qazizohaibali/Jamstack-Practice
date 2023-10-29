@@ -8,6 +8,7 @@ import SocialMediaSection from '../../sections/SocialMediaSection/SocialMediaSec
 import FaQsSection from '../../sections/FaQsSection/FaQsSection'
 import MiniHeroSection from '../../sections/MiniHeroSection/MiniHeroSection'
 import FeaturedTextSection from '../../sections/FeaturedTextSection/FeaturedTextSection'
+import AboutIntroSection from '../../sections/AboutIntroSection/AboutIntroSection'
 
 export const EntryRenderer = ({ pageBuilderData, ...props }) => {
   return pageBuilderData.map(({ __typename, ...sectionData }, index) => {
@@ -37,6 +38,10 @@ export const EntryRenderer = ({ pageBuilderData, ...props }) => {
       case 'SanityFeaturedTextSection':
         return (
           <FeaturedTextSection key={__typename} {...sectionData} {...props} />
+        )
+      case 'SanityAboutIntroSection':
+        return (
+          <AboutIntroSection key={__typename} {...sectionData} {...props} />
         )
 
       default:
