@@ -1,0 +1,35 @@
+.about-two-column-rich-text {
+  > p {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    color: #a8a8a8;
+  }
+  ul {
+    margin-left: 20px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  ul > li {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    color: #a8a8a8;
+    list-style: none;
+    position: relative;
+    &::before {
+      content: '';
+      width: 5px;
+      height: 5px;
+      position: absolute;
+      border-radius: 50px;
+      top: 8px;
+      left: -20px;
+      display: block;
+      background-color: #D7A172;
+    }
+  }
+}

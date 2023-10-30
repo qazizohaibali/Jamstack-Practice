@@ -141,6 +141,16 @@ export default {
           },
           to: [{type: 'aboutIntroSection'}],
         },
+        {
+          title: 'About Two Column Section',
+          name: 'twoColumnSection',
+          type: 'reference',
+          validation: (Rule) => Rule.required(),
+          options: {
+            disableNew: true,
+          },
+          to: [{type: 'twoColumnSection'}],
+        },
       ],
     },
   ],

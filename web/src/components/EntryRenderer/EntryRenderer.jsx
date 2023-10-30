@@ -9,6 +9,7 @@ import FaQsSection from '../../sections/FaQsSection/FaQsSection'
 import MiniHeroSection from '../../sections/MiniHeroSection/MiniHeroSection'
 import FeaturedTextSection from '../../sections/FeaturedTextSection/FeaturedTextSection'
 import AboutIntroSection from '../../sections/AboutIntroSection/AboutIntroSection'
+import AboutTwoColumnSection from '../../sections/AboutTwoColumnSection/AboutTwoColumnSection'
 
 export const EntryRenderer = ({ pageBuilderData, ...props }) => {
   return pageBuilderData.map(({ __typename, ...sectionData }, index) => {
@@ -42,6 +43,10 @@ export const EntryRenderer = ({ pageBuilderData, ...props }) => {
       case 'SanityAboutIntroSection':
         return (
           <AboutIntroSection key={__typename} {...sectionData} {...props} />
+        )
+      case 'SanityTwoColumnSection':
+        return (
+          <AboutTwoColumnSection key={__typename} {...sectionData} {...props} />
         )
 
       default:
