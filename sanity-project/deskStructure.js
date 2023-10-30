@@ -39,6 +39,10 @@ const JAMSTACK_SECTIONS = [
       sectionType: 'aboutIntroSection',
       sectionTitle: 'About Intro Section',
     },
+    {
+      sectionType: 'twoColumnSection',
+      sectionTitle: 'Two Column Section',
+    },
 ]
 
 const JAMSTACK_TEMPLATE = [

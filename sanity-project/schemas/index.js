@@ -9,6 +9,7 @@ import ourProjectsSection from "./documents/ourProjectsSection";
 import pages from "./documents/pages";
 import servicesSection from "./documents/servicesSection";
 import socialMediaSection from "./documents/socialMediaSection";
+import twoColumnSection from "./documents/twoColumnSection";
 import bodyPortableText from "./objects/bodyPortableText";
 import button from "./objects/button";
 import checklist from "./objects/checklist";
@@ -38,6 +39,7 @@ socialMediaSection,
 miniHeroSection,
 featuredTextsection,
 aboutIntroSection,
+twoColumnSection,
 // objects
 bodyPortableText,
 ourProductCard,

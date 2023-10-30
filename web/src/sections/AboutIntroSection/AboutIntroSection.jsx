@@ -51,7 +51,6 @@ export const AboutIntroSection = ({
             </div>
             <ScrollTrigger
               onEnter={() => setCounter(true)}
-              onExit={() => setCounter(false)}
             >
               <div className="flex items-center gap-10 lg:gap-20 lg:ml-20 my-10">
                 <div>
