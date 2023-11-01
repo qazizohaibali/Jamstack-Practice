@@ -43,6 +43,10 @@ const JAMSTACK_SECTIONS = [
       sectionType: 'twoColumnSection',
       sectionTitle: 'Two Column Section',
     },
+    {
+      sectionType: 'portfolioHubSection',
+      sectionTitle: 'Portfolio Hub Section',
+    },
 ]
 
 const JAMSTACK_TEMPLATE = [

@@ -102,6 +102,16 @@ export default {
           to: [{type: 'ourProductsSection'}],
         },
         {
+          title: 'Portfolio Hub Section',
+          name: 'portfolioHubSection',
+          type: 'reference',
+          validation: (Rule) => Rule.required(),
+          options: {
+            disableNew: true,
+          },
+          to: [{type: 'portfolioHubSection'}],
+        },
+        {
           title: 'Social Media Section',
           name: 'socialMediaSection',
           type: 'reference',

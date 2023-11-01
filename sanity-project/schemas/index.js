@@ -7,6 +7,7 @@ import miniHeroSection from "./documents/miniHeroSection";
 import ourProductsSection from "./documents/ourProductsSection";
 import ourProjectsSection from "./documents/ourProjectsSection";
 import pages from "./documents/pages";
+import portfolioHubSection from "./documents/portfolioHubSection";
 import portfolioPage from "./documents/portfolioPage";
 import servicesSection from "./documents/servicesSection";
 import socialMediaSection from "./documents/socialMediaSection";
@@ -43,6 +44,7 @@ miniHeroSection,
 featuredTextsection,
 aboutIntroSection,
 twoColumnSection,
+portfolioHubSection,
 // objects
 bodyPortableText,
 ourProductCard,
