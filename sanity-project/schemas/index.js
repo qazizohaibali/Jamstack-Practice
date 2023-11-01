@@ -7,6 +7,7 @@ import miniHeroSection from "./documents/miniHeroSection";
 import ourProductsSection from "./documents/ourProductsSection";
 import ourProjectsSection from "./documents/ourProjectsSection";
 import pages from "./documents/pages";
+import portfolioPage from "./documents/portfolioPage";
 import servicesSection from "./documents/servicesSection";
 import socialMediaSection from "./documents/socialMediaSection";
 import twoColumnSection from "./documents/twoColumnSection";
@@ -21,6 +22,7 @@ import nestedList from "./objects/nestedList";
 import ourProductCard from "./objects/ourProductCard";
 import ourProjectsCard from "./objects/ourProjectsCard";
 import ourServicesCard from "./objects/ourServicesCard";
+import portfolioImages from "./objects/portfolioImages";
 import socialMediaCard from "./objects/socialMediaCard";
 import video from "./objects/video";
 import youtube from "./objects/youtube";
@@ -30,6 +32,7 @@ export const schemaTypes = [
 // documents
 heroSection,
 pages,
+portfolioPage,
 servicesSection,
 introSection,
 ourProjectsSection,
@@ -54,5 +57,6 @@ nestedList,
 founderVideoCard,
 ourServicesCard,
 ourProjectsCard,
-socialMediaCard
+socialMediaCard,
+portfolioImages,
 ]

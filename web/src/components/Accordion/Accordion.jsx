@@ -24,6 +24,7 @@ export const Accordion = ({ otherClasses,heading,subText}) => {
             'w-full flex text-left gap-3  items-center cursor-pointer faqs-question py-4  text-primary_heading_color text-[#05315A] font-semibold  text-[14px] leading-[20px] font-Inter group '
           )}
         >
+          
           <Icon otherClasses={clsx("group-hover:block hidden",active ? "group-hover:hidden" : "group-hover:block")} icon="faq-open-icon" iconHeight="18" iconWidth="18"></Icon>
           <Icon icon="faq-close-icon" otherClasses={clsx('', !active ? "hidden" : "block")} iconWidth="22" iconHeight="22"></Icon>
           {heading}

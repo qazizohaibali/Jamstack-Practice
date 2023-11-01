@@ -50,6 +50,10 @@ const JAMSTACK_TEMPLATE = [
       templateType: 'pages',
       templateTitle: 'Pages',
     },
+    {
+      templateType: 'portfolioPage',
+      templateTitle: 'Portfolio Page',
+    },
 ]
 
 
