@@ -10,6 +10,7 @@ import MiniHeroSection from '../../sections/MiniHeroSection/MiniHeroSection'
 import FeaturedTextSection from '../../sections/FeaturedTextSection/FeaturedTextSection'
 import AboutIntroSection from '../../sections/AboutIntroSection/AboutIntroSection'
 import AboutTwoColumnSection from '../../sections/AboutTwoColumnSection/AboutTwoColumnSection'
+import PortolioHubSection from '../../sections/PortolioHubSection/PortolioHubSection'
 
 export const EntryRenderer = ({ pageBuilderData, ...props }) => {
   return pageBuilderData.map(({ __typename, ...sectionData }, index) => {
@@ -48,7 +49,11 @@ export const EntryRenderer = ({ pageBuilderData, ...props }) => {
         return (
           <AboutTwoColumnSection key={__typename} {...sectionData} {...props} />
         )
-
+        case 'SanityPortfolioHubSection':
+          return (
+            <PortolioHubSection key={__typename} {...sectionData} {...props} />
+          )
+        
       default:
         return null
     }
