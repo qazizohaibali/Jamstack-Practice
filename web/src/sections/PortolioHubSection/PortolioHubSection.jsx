@@ -3,7 +3,7 @@ import clsx from 'clsx'
 import { graphql, useStaticQuery } from 'gatsby'
 import Image from '../../components/Image/Image'
 import Heading from '../../components/Heading'
-export const PortolioHubSection = ({ otherClasses, title }) => {
+export const PortolioHubSection = ({ otherClasses,  }) => {
   const portolioHubSectionClasses = clsx(otherClasses)
 
   const {
@@ -14,7 +14,7 @@ export const PortolioHubSection = ({ otherClasses, title }) => {
         nodes {
           title
           slug {
-            source
+            current
           }
           mainPortfolioImage {
             ...CustomImage
@@ -37,7 +37,7 @@ export const PortolioHubSection = ({ otherClasses, title }) => {
     'Home Decoration',
   ]
 
-  // console.log('title', title)
+  console.log('nodes', nodes)
 
   return (
     <section
@@ -46,10 +46,10 @@ export const PortolioHubSection = ({ otherClasses, title }) => {
     >
       <div className="max-w-[1512px] mx-auto lg:px-[70px] px-4 my-10 lg:my-20">
         <div className="flex ">
-          {mycategories.map((nodes) => {
+          {mycategories.map((node) => {
             return (
               <div className="px-4 py-3 w-full flex justify-center items-center border-b-[2px] border-[#AFAFAF] hover:border-black">
-                <p>{nodes}</p>
+                <p>{node}</p>
               </div>
             )
           })}
