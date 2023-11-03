@@ -2,6 +2,7 @@ import aboutIntroSection from './documents/aboutIntroSection'
 import authors from './documents/authors'
 import blogSectionReference from './documents/blogSectionReference'
 import blogs from './documents/blogs'
+import categories from './documents/categories'
 import faqsSection from './documents/faqsSection'
 import featuredTextsection from './documents/featuredTextsection'
 import heroSection from './documents/heroSection'
@@ -50,6 +51,7 @@ export const schemaTypes = [
   blogSectionReference,
   // blogs,
   authors,
+  categories,
   // objects
   bodyPortableText,
   ourProductCard,
