@@ -53,6 +53,7 @@ export const PortolioHubSection = ({ otherClasses }) => {
     setTab(item)
   }
 
+<<<<<<< HEAD
 //  const nodesIndex = nodes. 
 
 //  const nodesIndex = nodes. 
@@ -64,8 +65,9 @@ export const PortolioHubSection = ({ otherClasses }) => {
   console.log('filterImages', filterImages)
   console.log('filterMainImage', filterMainImage)
 =======
+=======
+>>>>>>> 9274d5a (conflicts resolved)
 console.log("filterImages",filterImages);
->>>>>>> Stashed changes
 
   return (
     <section
@@ -106,6 +108,7 @@ console.log("filterImages",filterImages);
               <div className="bg-slate-600 w-full h-full">hello</div>
             </div>
           </div>
+<<<<<<< HEAD
         </div> */}
       <div className='flex flex-col'>
         {nodes.map((node,index) => {
@@ -117,6 +120,30 @@ console.log("filterImages",filterImages);
           )
         })}
       </div>
+=======
+        </div> 
+        <div className="flex flex-col">
+          {nodes.map(({ mainPortfolioImage, portfolioCardImages }, index) => {
+            return (
+              <div
+                className={clsx(
+                  'flex items-center ',
+                  index % 2 ? 'flex-row-reverse' : 'flex-row'
+                )}
+              >
+                <div className="main w-2/4">
+                  <Image imageData={mainPortfolioImage} />
+                </div>
+                <div className="data-iamge w-2/4 grid grid-cols-2 ">
+                  {portfolioCardImages.map(({ image }) => {
+                    return <Image imageData={image} />
+                  })}
+                </div>
+              </div>
+            )
+          })}
+        </div>
+>>>>>>> 9274d5a (conflicts resolved)
       </div>
     </section>
   )
