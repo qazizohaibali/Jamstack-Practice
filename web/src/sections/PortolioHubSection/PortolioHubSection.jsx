@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import clsx from 'clsx'
 import { graphql, useStaticQuery } from 'gatsby'
 import Image from '../../components/Image/Image'
 import Heading from '../../components/Heading'
-export const PortolioHubSection = ({ otherClasses,  }) => {
+export const PortolioHubSection = ({ otherClasses }) => {
   const portolioHubSectionClasses = clsx(otherClasses)
 
   const {
@@ -16,6 +16,7 @@ export const PortolioHubSection = ({ otherClasses,  }) => {
           slug {
             current
           }
+          portfolioCategory
           mainPortfolioImage {
             ...CustomImage
           }
@@ -30,14 +31,29 @@ export const PortolioHubSection = ({ otherClasses,  }) => {
     }
   `)
 
-  const mycategories = [
-    'Home Interior',
-    'Villas',
-    'Interior Fit-Out',
-    'Home Decoration',
-  ]
+  const [tab, setTab] = useState("homeInterior")
+
+  const allTabs = nodes.map(({ portfolioCategory }) => {
+    return portfolioCategory
+  })
+
+  const filterImages = nodes.find(
+    (item) => item.portfolioCategory === tab
+  ).portfolioCardImages
+
+  const filterMainImage = nodes.find(
+    (item)=> item.portfolioCategory === tab
+  ).mainPortfolioImage
+
+  const tabHandler = (item) => {
+    setTab(item)
+  }
 
   console.log('nodes', nodes)
+  console.log('allTabs', allTabs)
+  console.log('tab', tab)
+  console.log('filterImages', filterImages)
+  console.log('filterMainImage', filterMainImage)
 
   return (
     <section
@@ -46,10 +62,15 @@ export const PortolioHubSection = ({ otherClasses,  }) => {
     >
       <div className="max-w-[1512px] mx-auto lg:px-[70px] px-4 my-10 lg:my-20">
         <div className="flex ">
-          {mycategories.map((node) => {
+          {allTabs.map((node) => {
             return (
-              <div className="px-4 py-3 w-full flex justify-center items-center border-b-[2px] border-[#AFAFAF] hover:border-black">
-                <p>{node}</p>
+              <div
+                className="px-4 py-3 w-full flex justify-center items-center border-b-[2px] border-[#AFAFAF] hover:border-black"
+                onClick={() => {
+                  tabHandler(node)
+                }}
+              >
+                {node}
               </div>
             )
           })}
