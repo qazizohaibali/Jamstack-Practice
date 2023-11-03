@@ -42,11 +42,6 @@ export default {
       type: 'bodyPortableText',
     },
     {
-      title: 'Main Portfolio Image',
-      name: 'mainPortfolioImage',
-      type: 'customImage',
-    },
-    {
       title: 'Portfolio Card Images',
       name: 'portfolioCardImages',
       type: 'array',
