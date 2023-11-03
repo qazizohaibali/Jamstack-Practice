@@ -49,7 +49,7 @@ export const schemaTypes = [
   twoColumnSection,
   portfolioHubSection,
   blogSectionReference,
-  // blogs,
+  blogs,
   authors,
   categories,
   // objects
