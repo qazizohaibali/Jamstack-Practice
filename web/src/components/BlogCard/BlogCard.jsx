@@ -7,9 +7,9 @@ import './blogcard.scss'
 export const BlogCard = ({
   otherClasses,
   slug,
+  title,
   mobileImage,
   blogCategory: { category },
-  title,
 }) => {
   const blogCardClasses = clsx(otherClasses)
 
