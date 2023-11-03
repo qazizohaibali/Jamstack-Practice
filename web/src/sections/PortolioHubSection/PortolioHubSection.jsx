@@ -31,18 +31,22 @@ export const PortolioHubSection = ({ otherClasses }) => {
     }
   `)
 
-  const [tab, setTab] = useState("homeInterior")
+  const [tab, setTab] = useState('homeInterior')
 
-  const allTabs = nodes.map(({ portfolioCategory }) => {
-    return portfolioCategory
-  })
+  const filterTabs = [
+    ...new Set(
+      nodes.map(({ portfolioCategory }) => {
+        return portfolioCategory
+      })
+    ),
+  ]
 
   const filterImages = nodes.find(
     (item) => item.portfolioCategory === tab
   ).portfolioCardImages
 
   const filterMainImage = nodes.find(
-    (item)=> item.portfolioCategory === tab
+    (item) => item.portfolioCategory === tab
   ).mainPortfolioImage
 
   const tabHandler = (item) => {
@@ -51,11 +55,17 @@ export const PortolioHubSection = ({ otherClasses }) => {
 
 //  const nodesIndex = nodes. 
 
+//  const nodesIndex = nodes. 
+
+<<<<<<< Updated upstream
   console.log('nodes', nodes)
   console.log('allTabs', allTabs)
   console.log('tab', tab)
   console.log('filterImages', filterImages)
   console.log('filterMainImage', filterMainImage)
+=======
+console.log("filterImages",filterImages);
+>>>>>>> Stashed changes
 
   return (
     <section
@@ -64,7 +74,7 @@ export const PortolioHubSection = ({ otherClasses }) => {
     >
       <div className="max-w-[1512px] mx-auto lg:px-[70px] px-4 my-10 lg:my-20">
         <div className="flex ">
-          {allTabs.map((node) => {
+          {filterTabs.map((node) => {
             return (
               <div
                 className="px-4 py-3 w-full flex justify-center items-center border-b-[2px] border-[#AFAFAF] hover:border-black"
