@@ -31,9 +31,11 @@ export const PortolioHubSection = ({ otherClasses }) => {
     }
   `)
 
-  const [tab, setTab] = useState('allTab')
+  const [tab, setTab] = useState('AllTab')
   // const [allbtn, setAllbtn] = useState(false)
-  const [defaultResponse, setDefaultResponse] = useState([])
+  const [defaultResponse, setDefaultResponse] = useState(nodes)
+
+console.log("defaultResponse",defaultResponse);
 
   const filterTabs = [
     ...new Set(
@@ -45,19 +47,11 @@ export const PortolioHubSection = ({ otherClasses }) => {
 
   filterTabs.unshift('AllTab')
 
-  // const filterImages = nodes.find(
-  //   (item) => item.portfolioCategory === tab
-  // ).portfolioCardImages
-
   const tabHandler = (item) => {
     setTab(item)
   }
-
-  const filterdata = nodes.filter(({ portfolioCategory }) => {
-    return portfolioCategory === tab
-  })
-
   useEffect(() => {
+   
     if (tab === 'AllTab') {
       setDefaultResponse(nodes)
     } else {
@@ -66,14 +60,10 @@ export const PortolioHubSection = ({ otherClasses }) => {
       })
       setDefaultResponse(filterdata)
     }
+    
   }, [tab, nodes])
 
-  console.log('filterdata', filterdata)
 
-  console.log('nodes', nodes)
-
-  console.log('defaultResponse', defaultResponse)
-  console.log('tab', tab)
   return (
     <section
       className={portolioHubSectionClasses}
@@ -98,7 +88,7 @@ export const PortolioHubSection = ({ otherClasses }) => {
           })}
         </div>
         <div className="flex flex-col gap-10">
-          {nodes.map(({ mainImage, portfolioCardImages }, index) => {
+          {defaultResponse.map(({ mainImage, portfolioCardImages }, index) => {
             return (
               <div
                 className={clsx(
