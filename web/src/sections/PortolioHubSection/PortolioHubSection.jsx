@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import clsx from 'clsx'
 import { graphql, useStaticQuery } from 'gatsby'
 import Image from '../../components/Image/Image'
@@ -31,7 +31,9 @@ export const PortolioHubSection = ({ otherClasses }) => {
     }
   `)
 
-  const [tab, setTab] = useState('homeInterior')
+  const [tab, setTab] = useState('allTab')
+  // const [allbtn, setAllbtn] = useState(false)
+  const [defaultResponse, setDefaultResponse] = useState([])
 
   const filterTabs = [
     ...new Set(
@@ -41,16 +43,37 @@ export const PortolioHubSection = ({ otherClasses }) => {
     ),
   ]
 
-  const filterImages = nodes.find(
-    (item) => item.portfolioCategory === tab
-  ).portfolioCardImages
+  filterTabs.unshift('AllTab')
+
+  // const filterImages = nodes.find(
+  //   (item) => item.portfolioCategory === tab
+  // ).portfolioCardImages
 
   const tabHandler = (item) => {
     setTab(item)
   }
 
+  const filterdata = nodes.filter(({ portfolioCategory }) => {
+    return portfolioCategory === tab
+  })
+
+  useEffect(() => {
+    if (tab === 'AllTab') {
+      setDefaultResponse(nodes)
+    } else {
+      const filterdata = nodes.filter(({ portfolioCategory }) => {
+        return portfolioCategory === tab
+      })
+      setDefaultResponse(filterdata)
+    }
+  }, [tab, nodes])
+
+  console.log('filterdata', filterdata)
+
   console.log('nodes', nodes)
 
+  console.log('defaultResponse', defaultResponse)
+  console.log('tab', tab)
   return (
     <section
       className={portolioHubSectionClasses}
@@ -61,7 +84,10 @@ export const PortolioHubSection = ({ otherClasses }) => {
           {filterTabs.map((node) => {
             return (
               <div
-                className="px-4 py-3 w-full flex justify-center items-center border-b-[2px] border-[#AFAFAF] hover:border-black"
+                className={clsx(
+                  'px-4 py-3 w-full flex justify-center items-center border-b-[2px] border-[#AFAFAF] hover:border-black',
+                  node === tab ? 'text-[blue]' : 'text-[red]'
+                )}
                 onClick={() => {
                   tabHandler(node)
                 }}
@@ -71,28 +97,8 @@ export const PortolioHubSection = ({ otherClasses }) => {
             )
           })}
         </div>
-        {/* <div className="mt-5 flex ">
-          <div className="w-full relative lg:w-[50%]">
-            <Image imageData={} otherClasses="absolute top-0 left-0 w-full h-full" />
-            <div className="h-[300px] bg-slate-400">s</div>
-            <div className="relative -mt-3 -ml-3">
-              <Heading type="h4" otherClasses=""></Heading>
-            </div>
-          </div>
-          <div className="w-full lg:w-[50%] flex flex-col gap-1">
-            <div className="flex gap-1 h-full">
-              <div className="bg-slate-600 w-full h-full">hello</div>
-              <div className="bg-slate-600 w-full h-full">hello</div>
-            </div>
-
-            <div className="flex gap-1 h-full">
-              <div className="bg-slate-600 w-full h-full">hello</div>
-              <div className="bg-slate-600 w-full h-full">hello</div>
-            </div>
-          </div>
-        </div> */}
         <div className="flex flex-col gap-10">
-          {nodes.map(({ mainImage,portfolioCardImages }, index) => {
+          {nodes.map(({ mainImage, portfolioCardImages }, index) => {
             return (
               <div
                 className={clsx(
@@ -101,12 +107,12 @@ export const PortolioHubSection = ({ otherClasses }) => {
                 )}
               >
                 <div className="main w-2/4">
-                  <Image imageData={mainImage} otherClasses=""/>
+                  <Image imageData={mainImage} otherClasses="" />
                 </div>
                 <div className="data-iamge w-2/4 gap-5 grid grid-cols-2">
-                  {portfolioCardImages.map(({image}) => {
-                      return <Image imageData={image} otherClasses="" />
-                    })}
+                  {portfolioCardImages.map(({ image }) => {
+                    return <Image imageData={image} otherClasses="" />
+                  })}
                 </div>
               </div>
             )
