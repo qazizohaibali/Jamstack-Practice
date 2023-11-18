@@ -31,7 +31,7 @@ export const query = graphql`
       __typename
       title
       _rawBody
-      mainPortfolioImage {
+      mainImage {
         ...CustomImage
       }
       portfolioCardImages {

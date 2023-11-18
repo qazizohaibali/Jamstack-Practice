@@ -4,19 +4,9 @@ export default {
   type: 'object',
   fields: [
     {
-      title: 'Main Image',
-      name: 'mainImage',
+      title: 'Image',
+      name: 'image',
       type: 'customImage',
-    },
-    {
-      title: 'Images',
-      name: 'images',
-      type: 'array',
-      of: [
-        {
-          type: 'customImage',
-        },
-      ],
     },
   ],
   preview: {
