@@ -42,6 +42,16 @@ export default {
       type: 'bodyPortableText',
     },
     {
+      title: 'Icon',
+      name: 'icon',
+      type: 'customImage',
+    },
+    {
+      title: 'Hover Icon',
+      name: 'hoverIcon',
+      type: 'customImage',
+    },
+    {
       title: 'Main Image',
       name: 'mainImage',
       type: 'customImage',
