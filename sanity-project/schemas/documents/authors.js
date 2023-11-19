@@ -10,14 +10,14 @@ export default {
       },
       {
         title: 'Image',
-        name: 'customImage',
-        type: 'image',
+        name: 'image',
+        type: 'customImage',
       },
     ],
     preview: {
       select: {
         title: 'name',
-        media: 'customImage',
+        media: 'image',
       },
     },
   }
