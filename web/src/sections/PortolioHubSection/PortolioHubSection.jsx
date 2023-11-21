@@ -43,47 +43,42 @@ export const PortolioHubSection = ({ otherClasses }) => {
 
   console.log('defaultResponse', defaultResponse)
 
-  const filterTabs = [
-    ...new Set(
-      nodes.map(({ portfolioCategory, icon, hoverIcon }) => {
-        return {
-          category: portfolioCategory,
-          icon: icon,
-          hoverIcon: hoverIcon,
-        }
-      })
-    ),
-  ]
-
-  const allLocations = locations.map(({ region: { regionName } }) => {
+  const filterTabs = nodes.map(({ portfolioCategory, icon, hoverIcon }) => {
     return {
-      region: regionName,
-      nodes: locations
-        .filter(
-          ({ region: { regionName: nestedRegion } }) =>
-            nestedRegion === regionName
-        )
-        
-    };
-  });
+      category: portfolioCategory,
+      icon: icon,
+      hoverIcon: hoverIcon,
+    }
+  })
+
+  // const allLocations = locations.map(({ region: { regionName } }) => {
+  //   return {
+  //     region: regionName,
+  //     nodes: locations.filter(
+  //       ({ region: { regionName: nestedRegion } }) =>
+  //         nestedRegion === regionName
+  //     ),
+  //   }
+  // })
 
   function makeUniqueByRegion(array) {
-    const uniqueArray = [];
-    const uniqueRegionsMap = new Map();
-    allLocations.forEach((item) => {
-      const region = item.region;
-      if (!uniqueRegionsMap.has(region)) {
-        uniqueRegionsMap.set(region, true);
-        uniqueArray.push(item);
+    const uniqueArray = []
+    const uniqueRegionsMap = new Map()
+    filterTabs.forEach((item) => {
+      const category = item.category
+      if (!uniqueRegionsMap.has(category)) {
+        uniqueRegionsMap.set(category, true)
+        uniqueArray.push(item)
       }
-    });
+    })
 
-    return uniqueArray;
+    return uniqueArray
   }
-  const uniqueTabsArray = makeUniqueByRegion(filterTabs);
+  const uniqueTabsArray = makeUniqueByRegion(filterTabs)
 
   // filterTabs.unshift('AllTab')
-console.log("filterTabs",filterTabs);
+  console.log('filterTabs', filterTabs)
+  console.log("uniqueTabsArray",uniqueTabsArray);
   const tabHandler = (item) => {
     setTab(item)
   }
@@ -107,10 +102,8 @@ console.log("filterTabs",filterTabs);
     >
       <div className="max-w-[1512px] mx-auto lg:px-[70px] px-4 my-10 lg:my-20">
         <div className="flex ">
-         <div className=''>
-
-         </div>
-          {filterTabs.map(({category}) => {
+          <div className=""></div>
+          {uniqueTabsArray.map(({ category }) => {
             return (
               <div
                 className={clsx(
