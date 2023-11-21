@@ -49,7 +49,7 @@ export default {
           options: {
             disableNew: true,
           },
-          to: [{type: 'heroSection'}],
+          to: [{ type: 'heroSection' }],
         },
         {
           title: 'Intro Section',
@@ -59,7 +59,7 @@ export default {
           options: {
             disableNew: true,
           },
-          to: [{type: 'introSection'}],
+          to: [{ type: 'introSection' }],
         },
         {
           title: 'Services Section',
@@ -69,7 +69,7 @@ export default {
           options: {
             disableNew: true,
           },
-          to: [{type: 'servicesSection'}],
+          to: [{ type: 'servicesSection' }],
         },
         {
           title: 'Our Projects Section',
@@ -79,7 +79,7 @@ export default {
           options: {
             disableNew: true,
           },
-          to: [{type: 'ourProjectsSection'}],
+          to: [{ type: 'ourProjectsSection' }],
         },
         {
           title: 'Faqs Section',
@@ -89,7 +89,7 @@ export default {
           options: {
             disableNew: true,
           },
-          to: [{type: 'faqsSection'}],
+          to: [{ type: 'faqsSection' }],
         },
         {
           title: 'Our Products Section',
@@ -99,7 +99,7 @@ export default {
           options: {
             disableNew: true,
           },
-          to: [{type: 'ourProductsSection'}],
+          to: [{ type: 'ourProductsSection' }],
         },
         {
           title: 'Portfolio Hub Section',
@@ -109,7 +109,7 @@ export default {
           options: {
             disableNew: true,
           },
-          to: [{type: 'portfolioHubSection'}],
+          to: [{ type: 'portfolioHubSection' }],
         },
         {
           title: 'Social Media Section',
@@ -119,7 +119,7 @@ export default {
           options: {
             disableNew: true,
           },
-          to: [{type: 'socialMediaSection'}],
+          to: [{ type: 'socialMediaSection' }],
         },
         {
           title: 'Mini Hero Section',
@@ -129,7 +129,7 @@ export default {
           options: {
             disableNew: true,
           },
-          to: [{type: 'miniHeroSection'}],
+          to: [{ type: 'miniHeroSection' }],
         },
         {
           title: 'Featured Text Section',
@@ -139,7 +139,7 @@ export default {
           options: {
             disableNew: true,
           },
-          to: [{type: 'featuredTextSection'}],
+          to: [{ type: 'featuredTextSection' }],
         },
         {
           title: 'About Intro Section',
@@ -149,7 +149,7 @@ export default {
           options: {
             disableNew: true,
           },
-          to: [{type: 'aboutIntroSection'}],
+          to: [{ type: 'aboutIntroSection' }],
         },
         {
           title: 'About Two Column Section',
@@ -159,7 +159,27 @@ export default {
           options: {
             disableNew: true,
           },
-          to: [{type: 'twoColumnSection'}],
+          to: [{ type: 'twoColumnSection' }],
+        },
+        {
+          title: 'Location',
+          name: 'location',
+          type: 'reference',
+          validation: (Rule) => Rule.required(),
+          options: {
+            disableNew: true,
+          },
+          to: [{ type: 'location' }],
+        },
+        {
+          title: 'Experience',
+          name: 'experience',
+          type: 'reference',
+          validation: (Rule) => Rule.required(),
+          options: {
+            disableNew: true,
+          },
+          to: [{ type: 'experience' }],
         },
       ],
     },
@@ -168,7 +188,7 @@ export default {
     select: {
       title: 'title',
     },
-    prepare({title = 'No title'}) {
+    prepare({ title = 'No title' }) {
       return {
         title,
       }

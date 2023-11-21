@@ -8,11 +8,10 @@ import { Heading } from '../Heading'
 import { getImageDimensions } from '@sanity/asset-utils'
 import clientConfig from '../../../client-config'
 export const OurBodyCard = ({ otherClasses, cards, isInline }) => {
-
   const builder = ImageUrlBuilder({
     ...clientConfig.sanity,
   })
-  const ourBodyCardClasses = clsx(otherClasses,"mt-[32px]")
+  const ourBodyCardClasses = clsx(otherClasses, 'mt-[32px]')
   return (
     <div className={ourBodyCardClasses} data-testid="our-body-card">
       <div className="grid grid-cols-1 md:grid-cols-2">
@@ -21,7 +20,7 @@ export const OurBodyCard = ({ otherClasses, cards, isInline }) => {
           return (
             <div className="max-w-[347px] ">
               <div className="flex items-center gap-[16px] mb-[26px] mt-[32px]">
-                <img
+                <Image
                   src={builder
                     .image(icon)
                     .width(isInline ? 100 : 800)

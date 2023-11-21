@@ -13,7 +13,7 @@ export default {
     select: {
       media: 'image',
     },
-    prepare({title = 'No title', media}) {
+    prepare({ title = 'No title', media }) {
       return {
         title,
         media,

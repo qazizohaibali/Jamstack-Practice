@@ -1,12 +1,15 @@
+import ProfilePage from './documents/ProfilePage'
 import aboutIntroSection from './documents/aboutIntroSection'
 import authors from './documents/authors'
 import blogSectionReference from './documents/blogSectionReference'
 import blogs from './documents/blogs'
 import categories from './documents/categories'
+import experience from './documents/experience'
 import faqsSection from './documents/faqsSection'
 import featuredTextsection from './documents/featuredTextsection'
 import heroSection from './documents/heroSection'
 import introSection from './documents/introSection'
+import location from './documents/location'
 import miniHeroSection from './documents/miniHeroSection'
 import ourProductsSection from './documents/ourProductsSection'
 import ourProjectsSection from './documents/ourProjectsSection'
@@ -28,6 +31,7 @@ import ourProductCard from './objects/ourProductCard'
 import ourProjectsCard from './objects/ourProjectsCard'
 import ourServicesCard from './objects/ourServicesCard'
 import portfolioImages from './objects/portfolioImages'
+import profileCardImages from './objects/profileCardImages'
 import socialMediaCard from './objects/socialMediaCard'
 import video from './objects/video'
 import youtube from './objects/youtube'
@@ -52,6 +56,9 @@ export const schemaTypes = [
   blogs,
   authors,
   categories,
+  ProfilePage,
+  location,
+  experience,
   // objects
   bodyPortableText,
   ourProductCard,
@@ -68,4 +75,5 @@ export const schemaTypes = [
   ourProjectsCard,
   socialMediaCard,
   portfolioImages,
+  profileCardImages,
 ]

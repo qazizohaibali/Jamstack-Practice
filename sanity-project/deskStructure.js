@@ -59,6 +59,14 @@ const JAMSTACK_SECTIONS = [
     sectionType: 'blogSectionReference',
     sectionTitle: 'Blog Section Reference',
   },
+  {
+    sectionType: 'experience',
+    sectionTitle: 'Experience',
+  },
+  {
+    sectionType: 'location',
+    sectionTitle: 'Location',
+  },
 ]
 
 const JAMSTACK_TEMPLATE = [
@@ -73,6 +81,10 @@ const JAMSTACK_TEMPLATE = [
   {
     templateType: 'blogs',
     templateTitle: 'Blogs',
+  },
+  {
+    templateType: 'ProfilePage',
+    templateTitle: 'Profile Page',
   },
 ]
 
