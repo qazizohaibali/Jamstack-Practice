@@ -83,22 +83,22 @@ export default {
         {
             title: 'Top Project',
             name: 'topProject',
-            type: 'reference',
+            type: 'array',
             validation: (Rule) => Rule.required(),
             options: {
                 disableNew: true,
             },
-            to: [{ type: 'portfolioPage' }],
+            of: [{ type: 'reference', to: [{ type: 'portfolioPage' }] }],
         },
         {
             title: 'Recent Project',
             name: 'recentProject',
-            type: 'reference',
+            type: 'array',
             validation: (Rule) => Rule.required(),
             options: {
                 disableNew: true,
             },
-            to: [{ type: 'portfolioPage' }],
+            of: [{ type: 'reference', to: [{ type: 'portfolioPage' }] }],
         },
     ],
     preview: {
