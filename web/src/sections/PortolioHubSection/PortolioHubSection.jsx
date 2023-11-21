@@ -17,6 +17,12 @@ export const PortolioHubSection = ({ otherClasses }) => {
             current
           }
           portfolioCategory
+          hoverIcon {
+            ...CustomImage
+          }
+          icon {
+            ...CustomImage
+          }
           mainImage {
             ...CustomImage
           }
@@ -35,23 +41,53 @@ export const PortolioHubSection = ({ otherClasses }) => {
   // const [allbtn, setAllbtn] = useState(false)
   const [defaultResponse, setDefaultResponse] = useState(nodes)
 
-console.log("defaultResponse",defaultResponse);
+  console.log('defaultResponse', defaultResponse)
 
   const filterTabs = [
     ...new Set(
-      nodes.map(({ portfolioCategory }) => {
-        return portfolioCategory
+      nodes.map(({ portfolioCategory, icon, hoverIcon }) => {
+        return {
+          category: portfolioCategory,
+          icon: icon,
+          hoverIcon: hoverIcon,
+        }
       })
     ),
   ]
 
-  filterTabs.unshift('AllTab')
+  const allLocations = locations.map(({ region: { regionName } }) => {
+    return {
+      region: regionName,
+      nodes: locations
+        .filter(
+          ({ region: { regionName: nestedRegion } }) =>
+            nestedRegion === regionName
+        )
+        
+    };
+  });
 
+  function makeUniqueByRegion(array) {
+    const uniqueArray = [];
+    const uniqueRegionsMap = new Map();
+    allLocations.forEach((item) => {
+      const region = item.region;
+      if (!uniqueRegionsMap.has(region)) {
+        uniqueRegionsMap.set(region, true);
+        uniqueArray.push(item);
+      }
+    });
+
+    return uniqueArray;
+  }
+  const uniqueTabsArray = makeUniqueByRegion(filterTabs);
+
+  // filterTabs.unshift('AllTab')
+console.log("filterTabs",filterTabs);
   const tabHandler = (item) => {
     setTab(item)
   }
   useEffect(() => {
-   
     if (tab === 'AllTab') {
       setDefaultResponse(nodes)
     } else {
@@ -60,9 +96,9 @@ console.log("defaultResponse",defaultResponse);
       })
       setDefaultResponse(filterdata)
     }
-    
   }, [tab, nodes])
 
+  console.log('nodes', nodes)
 
   return (
     <section
@@ -71,18 +107,21 @@ console.log("defaultResponse",defaultResponse);
     >
       <div className="max-w-[1512px] mx-auto lg:px-[70px] px-4 my-10 lg:my-20">
         <div className="flex ">
-          {filterTabs.map((node) => {
+         <div className=''>
+
+         </div>
+          {filterTabs.map(({category}) => {
             return (
               <div
                 className={clsx(
                   'px-4 py-3 w-full flex justify-center items-center border-b-[2px] border-[#AFAFAF] hover:border-black',
-                  node === tab ? 'text-[blue]' : 'text-[red]'
+                  category === tab ? 'text-[blue]' : 'text-[red]'
                 )}
                 onClick={() => {
-                  tabHandler(node)
+                  tabHandler(category)
                 }}
               >
-                {node}
+                {category}
               </div>
             )
           })}
