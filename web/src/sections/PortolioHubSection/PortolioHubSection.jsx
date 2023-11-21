@@ -3,6 +3,10 @@ import clsx from 'clsx'
 import { graphql, useStaticQuery } from 'gatsby'
 import Image from '../../components/Image/Image'
 import Heading from '../../components/Heading'
+
+import allgray from '../../images/all-gray.svg'
+import allbrown from '../../images/all-brown.svg'
+
 export const PortolioHubSection = ({ otherClasses }) => {
   const portolioHubSectionClasses = clsx(otherClasses)
 
@@ -51,16 +55,6 @@ export const PortolioHubSection = ({ otherClasses }) => {
     }
   })
 
-  // const allLocations = locations.map(({ region: { regionName } }) => {
-  //   return {
-  //     region: regionName,
-  //     nodes: locations.filter(
-  //       ({ region: { regionName: nestedRegion } }) =>
-  //         nestedRegion === regionName
-  //     ),
-  //   }
-  // })
-
   function makeUniqueByRegion(array) {
     const uniqueArray = []
     const uniqueRegionsMap = new Map()
@@ -76,9 +70,7 @@ export const PortolioHubSection = ({ otherClasses }) => {
   }
   const uniqueTabsArray = makeUniqueByRegion(filterTabs)
 
-  // filterTabs.unshift('AllTab')
-  console.log('filterTabs', filterTabs)
-  console.log("uniqueTabsArray",uniqueTabsArray);
+  console.log('uniqueTabsArray', uniqueTabsArray)
   const tabHandler = (item) => {
     setTab(item)
   }
@@ -93,8 +85,6 @@ export const PortolioHubSection = ({ otherClasses }) => {
     }
   }, [tab, nodes])
 
-  console.log('nodes', nodes)
-
   return (
     <section
       className={portolioHubSectionClasses}
@@ -102,20 +92,47 @@ export const PortolioHubSection = ({ otherClasses }) => {
     >
       <div className="max-w-[1512px] mx-auto lg:px-[70px] px-4 my-10 lg:my-20">
         <div className="flex ">
-          <div className=""></div>
-          {uniqueTabsArray.map(({ category }) => {
+          <div
+            className="flex gap-2"
+            onClick={() => {
+              setTab('AllTab')
+            }}
+          >
+            {' '}
+            {tab === 'AllTab' ? (
+              <img src={allbrown} alt="" />
+            ) : (
+              <img src={allgray} alt="" />
+            )}
+            <p
+              className={clsx(
+                'px-4 py-3  w-full flex justify-center items-center border-b-[2px] border-[#AFAFAF] hover:border-black',
+                tab === 'AllTab' ? 'text-[blue]' : 'text-[red]'
+              )}
+            >
+              All
+            </p>
+          </div>
+          {uniqueTabsArray.map(({ category, icon, hoverIcon }) => {
             return (
-              <div
-                className={clsx(
-                  'px-4 py-3 w-full flex justify-center items-center border-b-[2px] border-[#AFAFAF] hover:border-black',
-                  category === tab ? 'text-[blue]' : 'text-[red]'
+              <>
+                {category === tab ? (
+                  <Image imageData={hoverIcon} otherClasses="h-full w-full" />
+                ) : (
+                  <Image imageData={icon} otherClasses="h-full w-full" />
                 )}
-                onClick={() => {
-                  tabHandler(category)
-                }}
-              >
-                {category}
-              </div>
+                <div
+                  className={clsx(
+                    'px-4 py-3 w-full flex justify-center items-center border-b-[2px] border-[#AFAFAF] hover:border-black',
+                    category === tab ? 'text-[blue]' : 'text-[red]'
+                  )}
+                  onClick={() => {
+                    tabHandler(category)
+                  }}
+                >
+                  {category}
+                </div>
+              </>
             )
           })}
         </div>
