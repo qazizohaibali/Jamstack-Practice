@@ -74,10 +74,10 @@ export default {
         Rule.custom((variant) => (variant === undefined ? 'This field must not be empty.' : true)),
       options: {
         list: [
-          {title: 'Home Interior', value: 'homeInterior'},
-          {title: 'Villas', value: 'villas'},
-          {title: 'Interior Fit-Out', value: 'interior'},
-          {title: 'Home Decoration', value: 'homeDecoration'},
+          {title: 'Home Interior', value: 'Home Interior'},
+          {title: 'Villas', value: 'Villas'},
+          {title: 'Interior Fit-Out', value: 'Interior Fit-Out'},
+          {title: 'Home Decoration', value: 'Home Decoration'},
         ],
       },
     },
