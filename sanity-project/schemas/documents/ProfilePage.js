@@ -39,6 +39,7 @@ export default {
             name: 'metaDescription',
             type: 'text',
         },
+
         {
             title: 'Image',
             name: 'image',
@@ -80,14 +81,24 @@ export default {
             to: [{ type: 'experience' }],
         },
         {
-            title: 'Profile Card Images',
-            name: 'profileCardImages',
-            type: 'array',
-            of: [
-                {
-                    type: 'profileCardImages',
-                },
-            ],
+            title: 'Top Project',
+            name: 'topProject',
+            type: 'reference',
+            validation: (Rule) => Rule.required(),
+            options: {
+                disableNew: true,
+            },
+            to: [{ type: 'portfolioPage' }],
+        },
+        {
+            title: 'Recent Project',
+            name: 'recentProject',
+            type: 'reference',
+            validation: (Rule) => Rule.required(),
+            options: {
+                disableNew: true,
+            },
+            to: [{ type: 'portfolioPage' }],
         },
     ],
     preview: {

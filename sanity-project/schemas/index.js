@@ -31,7 +31,6 @@ import ourProductCard from './objects/ourProductCard'
 import ourProjectsCard from './objects/ourProjectsCard'
 import ourServicesCard from './objects/ourServicesCard'
 import portfolioImages from './objects/portfolioImages'
-import profileCardImages from './objects/profileCardImages'
 import socialMediaCard from './objects/socialMediaCard'
 import video from './objects/video'
 import youtube from './objects/youtube'
@@ -75,5 +74,4 @@ export const schemaTypes = [
   ourProjectsCard,
   socialMediaCard,
   portfolioImages,
-  profileCardImages,
 ]
