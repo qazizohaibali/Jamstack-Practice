@@ -91,23 +91,28 @@ export const PortolioHubSection = ({ otherClasses }) => {
       data-testid="portolio-hub-section"
     >
       <div className="max-w-[1512px] mx-auto lg:px-[70px] px-4 my-10 lg:my-20">
-        <div className="flex ">
+        <div className="grid grid-cols-5">
           <div
-            className="flex gap-2"
+            className={clsx(
+              'flex cursor-pointer justify-center items-end gap-4 pb-6 ',
+              tab === 'AllTab'
+                ? 'border-b-[4px] border-[#EBAA70]'
+                : 'border-b-[4px]  border-[#96989A]'
+            )}
             onClick={() => {
               setTab('AllTab')
             }}
           >
             {' '}
             {tab === 'AllTab' ? (
-              <img src={allbrown} alt="" />
+              <img src={allbrown} alt="" className="w-[25px] h-[25px]" />
             ) : (
-              <img src={allgray} alt="" />
+              <img src={allgray} alt="" className="w-[25px] h-[25px]" />
             )}
             <p
               className={clsx(
-                'px-4 py-3  w-full flex justify-center items-center border-b-[2px] border-[#AFAFAF] hover:border-black',
-                tab === 'AllTab' ? 'text-[blue]' : 'text-[red]'
+                '',
+                tab === 'AllTab' ? 'text-[#EBAA70]' : 'text-[#96989A]'
               )}
             >
               All
@@ -115,28 +120,46 @@ export const PortolioHubSection = ({ otherClasses }) => {
           </div>
           {uniqueTabsArray.map(({ category, icon, hoverIcon }) => {
             return (
-              <>
-                {category === tab ? (
-                  <Image imageData={hoverIcon} otherClasses="h-full w-full" />
-                ) : (
-                  <Image imageData={icon} otherClasses="h-full w-full" />
+              <div
+                className={clsx(
+                  'flex cursor-pointer justify-center items-end gap-4 w-full  pb-6',
+                  category === tab
+                    ? 'border-b-[4px] border-[#EBAA70]'
+                    : 'border-b-[4px] border-[#96989A]'
                 )}
+                onClick={() => {
+                  tabHandler(category)
+                }}
+              >
+                <div className="max-w-[100px]">
+                  {category === tab ? (
+                    <Image
+                      imageData={hoverIcon}
+                      otherClasses="w-full h-full"
+                      objectFit="contain"
+                    />
+                  ) : (
+                    <Image
+                      imageData={icon}
+                      otherClasses="w-full h-full"
+                      objectFit="contain"
+                    />
+                  )}
+                </div>
                 <div
                   className={clsx(
-                    'px-4 py-3 w-full flex justify-center items-center border-b-[2px] border-[#AFAFAF] hover:border-black',
-                    category === tab ? 'text-[blue]' : 'text-[red]'
+                    '',
+                    category === tab ? 'text-[#EBAA70]' : 'text-[#96989A]'
                   )}
-                  onClick={() => {
-                    tabHandler(category)
-                  }}
+                 
                 >
                   {category}
                 </div>
-              </>
+              </div>
             )
           })}
         </div>
-        <div className="flex flex-col gap-10">
+        <div className="flex flex-col gap-10 mt-10">
           {defaultResponse.map(({ mainImage, portfolioCardImages }, index) => {
             return (
               <div
