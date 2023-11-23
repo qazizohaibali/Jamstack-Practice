@@ -181,6 +181,16 @@ export default {
           },
           to: [{ type: 'experience' }],
         },
+        {
+          title: 'Profile Hub Section',
+          name: 'profileHubSection',
+          type: 'reference',
+          validation: (Rule) => Rule.required(),
+          options: {
+            disableNew: true,
+          },
+          to: [{ type: 'profileHubSection' }],
+        },
 
       ],
     },

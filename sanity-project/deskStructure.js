@@ -68,8 +68,8 @@ const JAMSTACK_SECTIONS = [
     sectionTitle: 'Location',
   },
   {
-    sectionType: 'relevantProfileFeatured',
-    sectionTitle: 'Relevant Profile Featured',
+    sectionType: 'profileHubSection',
+    sectionTitle: 'Profile Hub Section',
   },
 ]
 
