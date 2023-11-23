@@ -11,7 +11,10 @@ import allbrown from '../../images/all-brown.svg'
 import RichText from '../../components/RichText/RichText'
 
 export const PortolioHubSection = ({ otherClasses }) => {
-  const portolioHubSectionClasses = clsx(otherClasses,"bg-[#2f3034] lg:py-20 py-10 lg:px-[70px] px-4 ")
+  const portolioHubSectionClasses = clsx(
+    otherClasses,
+    'bg-[#2f3034] lg:py-20 py-10 lg:px-[70px]  '
+  )
 
   const {
     allSanityPortfolioPage: { nodes },
@@ -94,7 +97,7 @@ export const PortolioHubSection = ({ otherClasses }) => {
       data-testid="portolio-hub-section"
     >
       <div className="max-w-[1512px] mx-auto ">
-        <div className="grid grid-cols-5">
+        <div className="grid grid-cols-5 lg:px-0 px-4">
           <div
             className={clsx(
               'flex cursor-pointer justify-center items-end gap-4 pb-6 px-3',
@@ -176,13 +179,26 @@ export const PortolioHubSection = ({ otherClasses }) => {
               return (
                 <div
                   className={clsx(
-                    'flex items-center gap-10',
+                    'flex lg:flex-row flex-col justify-between lg:items-center gap-10',
                     index % 2 ? 'flex-row-reverse' : 'flex-row'
                   )}
                 >
+                  <div
+                    className={clsx(
+                      'w-full  bg-[#EBAA70] py-2 px-2 block lg:hidden'
+                    )}
+                  >
+                    <Heading type="h2" otherClasses="text-[22px] lg:[36px]">
+                      {title}
+                    </Heading>
+                    <RichText
+                      richText={_rawShortDescription}
+                      otherClasses="porftolio-card-richtext"
+                    />
+                  </div>
                   <Link
                     to={current}
-                    className="main h-full relative portfolio-main-image  w-2/4 group   hover:cursor-pointer  "
+                    className="main h-full relative portfolio-main-image w-full  lg:w-2/4 group   hover:cursor-pointer  px-4 lg:px-0"
                   >
                     <div className="overflow-hidden">
                       <Image
@@ -208,7 +224,7 @@ export const PortolioHubSection = ({ otherClasses }) => {
                     </div>
                   </Link>
 
-                  <div className="data-iamge  w-2/4 gap-5 grid grid-cols-2">
+                  <div className="data-iamge w-full px-4 lg:px-0 lg:w-2/4 gap-5 grid grid-cols-2">
                     {portfolioCardImages.map(({ image }) => {
                       return <Image imageData={image} otherClasses="" />
                     })}
