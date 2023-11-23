@@ -11,7 +11,7 @@ export const PortolioHubSection = ({ otherClasses }) => {
   const portolioHubSectionClasses = clsx(otherClasses)
 
   const {
-    allSanityPortfolioPage: { nodes },
+    allSanityPortfolioPage: { nodes }
   } = useStaticQuery(graphql`
     {
       allSanityPortfolioPage {
@@ -47,7 +47,7 @@ export const PortolioHubSection = ({ otherClasses }) => {
 
   console.log('defaultResponse', defaultResponse)
 
-  const filterTabs = nodes.map(({ portfolioCategory, icon, hoverIcon }) => {
+  const filterTabs = nodes?.map(({ portfolioCategory, icon, hoverIcon }) => {
     return {
       category: portfolioCategory,
       icon: icon,
@@ -78,7 +78,7 @@ export const PortolioHubSection = ({ otherClasses }) => {
     if (tab === 'AllTab') {
       setDefaultResponse(nodes)
     } else {
-      const filterdata = nodes.filter(({ portfolioCategory }) => {
+      const filterdata = nodes?.filter(({ portfolioCategory }) => {
         return portfolioCategory === tab
       })
       setDefaultResponse(filterdata)

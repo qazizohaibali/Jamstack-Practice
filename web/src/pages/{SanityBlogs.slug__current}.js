@@ -6,9 +6,10 @@ import Seo from '../components/seo'
 
 const IndexPage = (props) => {
   return (
-    <Layout isCtaEnabled={true}>
-      <EntryRenderer pageBuilderData={props.data.page.pageBuilder} />
-    </Layout>
+    // <Layout isCtaEnabled={true}>
+    //   {/* <EntryRenderer pageBuilderData={props.data.page.pageBuilder} /> */}
+    // </Layout>
+    <></>
   )
 }
 
@@ -22,7 +23,7 @@ export default IndexPage
 
 export const query = graphql`
   query BlogPageQuery($id: String!) {
-    sanityBlogs(id: { eq: $id }) {
+    page: sanityBlogs(id: { eq: $id }) {
       slug {
         current
       }
