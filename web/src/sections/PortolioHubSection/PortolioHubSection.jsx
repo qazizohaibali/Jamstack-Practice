@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import clsx from 'clsx'
-import { graphql, useStaticQuery } from 'gatsby'
+import { Link, graphql, useStaticQuery } from 'gatsby'
 import Image from '../../components/Image/Image'
 import Heading from '../../components/Heading'
 
@@ -11,7 +11,7 @@ import allbrown from '../../images/all-brown.svg'
 import RichText from '../../components/RichText/RichText'
 
 export const PortolioHubSection = ({ otherClasses }) => {
-  const portolioHubSectionClasses = clsx(otherClasses)
+  const portolioHubSectionClasses = clsx(otherClasses,"bg-[#2f3034] lg:py-20 py-10 lg:px-[70px] px-4 ")
 
   const {
     allSanityPortfolioPage: { nodes },
@@ -93,7 +93,7 @@ export const PortolioHubSection = ({ otherClasses }) => {
       className={portolioHubSectionClasses}
       data-testid="portolio-hub-section"
     >
-      <div className="max-w-[1512px] mx-auto lg:px-[70px] px-4 my-10 lg:my-20">
+      <div className="max-w-[1512px] mx-auto ">
         <div className="grid grid-cols-5">
           <div
             className={clsx(
@@ -161,9 +161,18 @@ export const PortolioHubSection = ({ otherClasses }) => {
             )
           })}
         </div>
-        <div className="flex flex-col gap-10 mt-10">
+        <div className="flex flex-col gap-10 mt-16">
           {defaultResponse.map(
-            ({ mainImage, portfolioCardImages, title,_rawShortDescription }, index) => {
+            (
+              {
+                mainImage,
+                portfolioCardImages,
+                title,
+                _rawShortDescription,
+                slug: { current },
+              },
+              index
+            ) => {
               return (
                 <div
                   className={clsx(
@@ -171,27 +180,34 @@ export const PortolioHubSection = ({ otherClasses }) => {
                     index % 2 ? 'flex-row-reverse' : 'flex-row'
                   )}
                 >
-                  <div className="main h-full relative portfolio-main-image w-2/4 group hover:cursor-pointer">
-                    <Image
-                      imageData={mainImage}
-                      otherClasses="!h-full !w-full  relative group"
-                    />
-
+                  <Link
+                    to={current}
+                    className="main h-full relative portfolio-main-image  w-2/4 group   hover:cursor-pointer  "
+                  >
+                    <div className="overflow-hidden">
+                      <Image
+                        imageData={mainImage}
+                        otherClasses="!h-full !w-full portfolio-main-image relative group group-hover:scale-125 transition-all duration-700 ease-in-out"
+                      />
+                    </div>
                     <div
                       className={clsx(
-                        '!absolute -mt-[100px] left-0  !w-full !hidden group-hover:!flex-col group-hover:!flex bg-[#EBAA70] py-3 px-7' ,
-                        index % 2 === 0 ? '!items-start-start -translate-x-7' : '!items-end translate-x-7'
+                        '!absolute -mt-[100px] left-0 -translate-y-[50px] !w-full !hidden group-hover:!flex-col group-hover:!flex bg-[#EBAA70] py-7 px-7',
+                        index % 2 === 0
+                          ? '!items-start-start -translate-x-7'
+                          : '!items-end translate-x-7'
                       )}
                     >
-                      <Heading
-                        type="h2"
-                        otherClasses={clsx('')}
-                      >
+                      <Heading type="h2" otherClasses={clsx('')}>
                         {title}
                       </Heading>
-                      <RichText richText={_rawShortDescription}  otherClasses="porftolio-card-richtext" />
+                      <RichText
+                        richText={_rawShortDescription}
+                        otherClasses="porftolio-card-richtext"
+                      />
                     </div>
-                  </div>
+                  </Link>
+
                   <div className="data-iamge  w-2/4 gap-5 grid grid-cols-2">
                     {portfolioCardImages.map(({ image }) => {
                       return <Image imageData={image} otherClasses="" />
