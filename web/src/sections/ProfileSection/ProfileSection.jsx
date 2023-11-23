@@ -4,7 +4,7 @@ import Image from '../../components/Image/Image'
 import RichText from '../../components/RichText/RichText'
 import { Heading } from '../../components/Heading'
 import './ProfileSection.scss'
-import { Link } from 'gatsby'
+import { Link, graphql, useStaticQuery } from 'gatsby'
 export const ProfileSection = ({
   otherClasses,
   image,
@@ -17,6 +17,27 @@ export const ProfileSection = ({
   recentProject,
 }) => {
   const profileSectionClasses = clsx(otherClasses, 'w-full bg-[#2f3034]')
+  const {
+    allSanityProfilePage: { nodes },
+  } = useStaticQuery(graphql`
+    {
+      allSanityProfilePage {
+        nodes {
+          image {
+            ...CustomImage
+          }
+          slug {
+            current
+          }
+        }
+      }
+    }
+  `)
+  const concat_nodes = nodes.slice(0, 3)
+  const hover_nodes_last = nodes.slice(
+    concat_nodes.length,
+    concat_nodes.length + 1
+  )
   return (
     <section className={profileSectionClasses} data-testid="profile-section">
       <div className="max-w-[1512px] mx-auto lg:px-[70px] xl:px-[150px] px-4 lg:py-20 py-10 flex flex-col items-center md:items-start gap-10 md:gap-0 md:flex-row justify-between">
@@ -39,6 +60,25 @@ export const ProfileSection = ({
             {experience.experienceYears}
           </p>
           <div className="h-[1px] w-full bg-white opacity-20"></div>
+          <div className="flex gap-5">
+            {concat_nodes?.map(({ image, slug }, index) => {
+              return (
+                <Link to={slug.current} key={index}>
+                  <Image imageData={image} />
+                </Link>
+              )
+            })}
+            {hover_nodes_last?.map(({ image }, index) => {
+              return (
+                <Link to="/hub-profile" key={index} className="relative">
+                  <Image imageData={image} otherClasses="relative opacity-50" />
+                  <p className="absolute top-[40%] left-[30%] text-white opacity-100 font-Montserrat font-bold">
+                    +{nodes.length}
+                  </p>
+                </Link>
+              )
+            })}
+          </div>
         </div>
         <div className="w-full md:w-[60%] lg:w-[65%] flex flex-col gap-20">
           <div className="top flex flex-col gap-10">

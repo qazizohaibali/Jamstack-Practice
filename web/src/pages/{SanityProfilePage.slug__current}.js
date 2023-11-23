@@ -5,7 +5,6 @@ import Layout from '../components/Layout/Layout'
 import Seo from '../components/seo'
 
 const ProfilePageTemplate = (props) => {
-  console.log(props, 'props ijaz')
   const { data } = props
   const profile = data && data.sanityProfilePage
 
