@@ -67,6 +67,10 @@ const JAMSTACK_SECTIONS = [
     sectionType: 'location',
     sectionTitle: 'Location',
   },
+  {
+    sectionType: 'relevantProfileFeatured',
+    sectionTitle: 'Relevant Profile Featured',
+  },
 ]
 
 const JAMSTACK_TEMPLATE = [
@@ -86,6 +90,7 @@ const JAMSTACK_TEMPLATE = [
     templateType: 'ProfilePage',
     templateTitle: 'Profile Page',
   },
+
 ]
 
 export const myStructure = (S) =>

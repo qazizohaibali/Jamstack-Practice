@@ -1,4 +1,5 @@
 import ProfilePage from './documents/ProfilePage'
+import RelevantProfileFeatured from './documents/RelevantProfileFeatured'
 import aboutIntroSection from './documents/aboutIntroSection'
 import authors from './documents/authors'
 import blogSectionReference from './documents/blogSectionReference'
@@ -58,6 +59,7 @@ export const schemaTypes = [
   ProfilePage,
   location,
   experience,
+  RelevantProfileFeatured,
   // objects
   bodyPortableText,
   ourProductCard,
