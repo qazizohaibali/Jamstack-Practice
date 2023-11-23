@@ -60,6 +60,8 @@ export const ProfileSection = ({
             {experience.experienceYears}
           </p>
           <div className="h-[1px] w-full bg-white opacity-20"></div>
+          <Heading type="h5">Relevant Profiles</Heading>
+
           <div className="flex gap-5">
             {concat_nodes?.map(({ image, slug }, index) => {
               return (
