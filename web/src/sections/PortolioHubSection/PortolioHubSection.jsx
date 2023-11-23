@@ -4,14 +4,17 @@ import { graphql, useStaticQuery } from 'gatsby'
 import Image from '../../components/Image/Image'
 import Heading from '../../components/Heading'
 
+import './portfoliohubsection.scss'
+
 import allgray from '../../images/all-gray.svg'
 import allbrown from '../../images/all-brown.svg'
+import RichText from '../../components/RichText/RichText'
 
 export const PortolioHubSection = ({ otherClasses }) => {
   const portolioHubSectionClasses = clsx(otherClasses)
 
   const {
-    allSanityPortfolioPage: { nodes }
+    allSanityPortfolioPage: { nodes },
   } = useStaticQuery(graphql`
     {
       allSanityPortfolioPage {
@@ -94,10 +97,10 @@ export const PortolioHubSection = ({ otherClasses }) => {
         <div className="grid grid-cols-5">
           <div
             className={clsx(
-              'flex cursor-pointer justify-center items-end gap-4 pb-6 ',
+              'flex cursor-pointer justify-center items-end gap-4 pb-6 px-3',
               tab === 'AllTab'
-                ? 'border-b-[4px] border-[#EBAA70]'
-                : 'border-b-[4px]  border-[#96989A]'
+                ? 'border-b-[2px] border-[#EBAA70]'
+                : 'border-b-[2px]  border-[#96989A]'
             )}
             onClick={() => {
               setTab('AllTab')
@@ -122,10 +125,10 @@ export const PortolioHubSection = ({ otherClasses }) => {
             return (
               <div
                 className={clsx(
-                  'flex cursor-pointer justify-center items-end gap-4 w-full  pb-6',
+                  'flex cursor-pointer justify-center items-end gap-4 w-full px-3 pb-6',
                   category === tab
-                    ? 'border-b-[4px] border-[#EBAA70]'
-                    : 'border-b-[4px] border-[#96989A]'
+                    ? 'border-b-[2px] border-[#EBAA70]'
+                    : 'border-b-[2px] border-[#96989A]'
                 )}
                 onClick={() => {
                   tabHandler(category)
@@ -151,7 +154,6 @@ export const PortolioHubSection = ({ otherClasses }) => {
                     '',
                     category === tab ? 'text-[#EBAA70]' : 'text-[#96989A]'
                   )}
-                 
                 >
                   {category}
                 </div>
@@ -160,25 +162,45 @@ export const PortolioHubSection = ({ otherClasses }) => {
           })}
         </div>
         <div className="flex flex-col gap-10 mt-10">
-          {defaultResponse.map(({ mainImage, portfolioCardImages }, index) => {
-            return (
-              <div
-                className={clsx(
-                  'flex items-center gap-10',
-                  index % 2 ? 'flex-row-reverse' : 'flex-row'
-                )}
-              >
-                <div className="main w-2/4">
-                  <Image imageData={mainImage} otherClasses="" />
+          {defaultResponse.map(
+            ({ mainImage, portfolioCardImages, title,_rawShortDescription }, index) => {
+              return (
+                <div
+                  className={clsx(
+                    'flex items-center gap-10',
+                    index % 2 ? 'flex-row-reverse' : 'flex-row'
+                  )}
+                >
+                  <div className="main h-full relative portfolio-main-image w-2/4 group hover:cursor-pointer">
+                    <Image
+                      imageData={mainImage}
+                      otherClasses="!h-full !w-full  relative group"
+                    />
+
+                    <div
+                      className={clsx(
+                        '!absolute -mt-[100px] left-0  !w-full !hidden group-hover:!flex-col group-hover:!flex bg-[#EBAA70] py-3 px-7' ,
+                        index % 2 === 0 ? '!items-start-start -translate-x-7' : '!items-end translate-x-7'
+                      )}
+                    >
+                      <Heading
+                        type="h2"
+                        otherClasses={clsx('')}
+                      >
+                        {title}
+                      </Heading>
+                      <RichText richText={_rawShortDescription}  otherClasses="porftolio-card-richtext" />
+                    </div>
+                  </div>
+                  <div className="data-iamge  w-2/4 gap-5 grid grid-cols-2">
+                    {portfolioCardImages.map(({ image }) => {
+                      return <Image imageData={image} otherClasses="" />
+                    })}
+                  </div>
                 </div>
-                <div className="data-iamge w-2/4 gap-5 grid grid-cols-2">
-                  {portfolioCardImages.map(({ image }) => {
-                    return <Image imageData={image} otherClasses="" />
-                  })}
-                </div>
-              </div>
-            )
-          })}
+              )
+            }
+          )}
         </div>
       </div>
     </section>
