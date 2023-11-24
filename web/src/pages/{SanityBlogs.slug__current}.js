@@ -3,13 +3,14 @@ import React from 'react'
 import EntryRenderer from '../components/EntryRenderer/EntryRenderer'
 import Layout from '../components/Layout/Layout'
 import Seo from '../components/seo'
+import FeaturedBlogCard from '../components/FeaturedBlogCard/FeaturedBlogCard'
 
 const IndexPage = (props) => {
+  console.log("props", props);
   return (
-    // <Layout isCtaEnabled={true}>
-    //   {/* <EntryRenderer pageBuilderData={props.data.page.pageBuilder} /> */}
-    // </Layout>
-    <></>
+    <Layout isCtaEnabled={true}>
+      <FeaturedBlogCard />
+    </Layout>
   )
 }
 

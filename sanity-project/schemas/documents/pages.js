@@ -191,6 +191,16 @@ export default {
           },
           to: [{ type: 'profileHubSection' }],
         },
+        {
+          title: 'blog Section Reference',
+          name: 'blogSectionReference',
+          type: 'reference',
+          validation: (Rule) => Rule.required(),
+          options: {
+            disableNew: true,
+          },
+          to: [{ type: 'blogSectionReference' }],
+        },
 
       ],
     },
