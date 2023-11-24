@@ -11,6 +11,7 @@ import FeaturedTextSection from '../../sections/FeaturedTextSection/FeaturedText
 import AboutIntroSection from '../../sections/AboutIntroSection/AboutIntroSection'
 import AboutTwoColumnSection from '../../sections/AboutTwoColumnSection/AboutTwoColumnSection'
 import PortolioHubSection from '../../sections/PortolioHubSection/PortolioHubSection'
+import ProfileHubSection from '../../sections/ProfileHubSection/ProfileHubSection'
 
 export const EntryRenderer = ({ pageBuilderData, ...props }) => {
   return pageBuilderData.map(({ __typename, ...sectionData }, index) => {
@@ -49,11 +50,15 @@ export const EntryRenderer = ({ pageBuilderData, ...props }) => {
         return (
           <AboutTwoColumnSection key={__typename} {...sectionData} {...props} />
         )
-        case 'SanityPortfolioHubSection':
-          return (
-            <PortolioHubSection key={__typename} {...sectionData} {...props} />
-          )
-        
+      case 'SanityPortfolioHubSection':
+        return (
+          <PortolioHubSection key={__typename} {...sectionData} {...props} />
+        )
+
+      case 'SanityProfileHubSection':
+        return (
+          <ProfileHubSection key={__typename} {...sectionData} {...props} />
+        )
       default:
         return null
     }
