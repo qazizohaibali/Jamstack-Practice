@@ -16,7 +16,7 @@ export const ProfileHubCard = ({
 }) => {
   const profileHubCardClasses = clsx(
     otherClasses,
-    'w-full bg-[#424242] py-10 pl-10 pr-20 border_color_top_right  ease-in-out duration-500 transition-all'
+    'w-full bg-[#424242]  py-10 pl-10 lg:pr-20 border_color_top_right  ease-in-out duration-500 transition-all'
   )
 
   return (

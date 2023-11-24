@@ -12,7 +12,10 @@ export const ProfileHubSection = ({
   seeAllButton,
   uploadButton,
 }) => {
-  const profileHubSectionClasses = clsx(otherClasses, 'w-full bg-[#2f3034]  ')
+  const profileHubSectionClasses = clsx(
+    otherClasses,
+    'w-full bg-[#2f3034] pt-20 lg:pt-24'
+  )
   const {
     allSanityProfilePage: { nodes },
   } = useStaticQuery(graphql`
@@ -60,13 +63,13 @@ export const ProfileHubSection = ({
           </div>
         </div>
         <Heading type="h2">{allHeading}</Heading>
-        <div className="flex gap-10 justify-center items-center">
+        <div className="flex flex-col md:flex-row gap-10 justify-center items-center">
           <Button
             {...seeAllButton}
             variant="fill-transparent"
-            otherClasses="hover:bg-[#2F3034]"
+            otherClasses="hover:bg-[#2F3034] w-full md:w-fit text-center"
           />
-          <Button {...uploadButton} />
+          <Button {...uploadButton} otherClasses="w-full md:w-fit" />
         </div>
       </div>
     </section>
