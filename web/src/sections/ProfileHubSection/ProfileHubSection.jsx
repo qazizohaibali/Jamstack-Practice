@@ -2,8 +2,8 @@ import React from 'react'
 import clsx from 'clsx'
 import { Button } from '../../components/Button'
 import { Heading } from '../../components/Heading'
-import { graphql } from 'gatsby'
-// import ProfileHubCard from '../../components/ProfileHubCard/ProfileHubCard'
+import { graphql, useStaticQuery } from 'gatsby'
+import ProfileHubCard from '../../components/ProfileHubCard/ProfileHubCard'
 
 export const ProfileHubSection = ({
   otherClasses,
@@ -13,35 +13,51 @@ export const ProfileHubSection = ({
   uploadButton,
 }) => {
   const profileHubSectionClasses = clsx(otherClasses, 'w-full bg-[#2f3034]  ')
-  // const {
-  //   allSanityProfilePage: { nodes },
-  // } = useStaticQuery(graphql`
-  //   {
-  //     allSanityProfilePage {
-  //       nodes {
-  //         image {
-  //           ...CustomImage
-  //         }
-  //         slug {
-  //           current
-  //         }
-  //       }
-  //     }
-  //   }
-  // `)
+  const {
+    allSanityProfilePage: { nodes },
+  } = useStaticQuery(graphql`
+    {
+      allSanityProfilePage {
+        nodes {
+          image {
+            ...CustomImage
+          }
+          slug {
+            current
+          }
+          name
+          atPosition
+          location {
+            country
+          }
+        }
+      }
+    }
+  `)
   return (
     <section
       className={profileHubSectionClasses}
       data-testid="profile-hub-section"
     >
-      <div className="max-w-[1512px] mx-auto lg:px-[70px] xl:px-[150px] px-4 lg:py-20 py-10">
-        <div>
+      <div className="max-w-[1512px] mx-auto lg:px-[70px] xl:px-[150px] px-4 lg:py-20 py-10 flex flex-col gap-20">
+        <div className="flex flex-col gap-20">
           <Heading type="h2">{topHeading}</Heading>
-          {/* <div>
-            {nodes?.map(({ image, slug }, index) => {
-              return <ProfileHubCard key={index} slug={slug} image={image} />
-            })}
-          </div> */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            {nodes?.map(
+              ({ image, slug, name, atPosition, location }, index) => {
+                return (
+                  <ProfileHubCard
+                    key={index}
+                    slug={slug}
+                    image={image}
+                    name={name}
+                    atPosition={atPosition}
+                    location={location}
+                  />
+                )
+              }
+            )}
+          </div>
         </div>
         <Heading type="h2">{allHeading}</Heading>
         <div className="flex gap-10 justify-center items-center">

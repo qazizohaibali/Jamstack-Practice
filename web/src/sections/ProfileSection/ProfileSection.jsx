@@ -47,7 +47,7 @@ export const ProfileSection = ({
               {topProject?.map(({ slug, mainImage }, index) => {
                 return (
                   <Link
-                    to={slug.current}
+                    to={`/${slug.current}`}
                     key={index}
                     className="hover:opacity-70"
                   >
@@ -63,7 +63,7 @@ export const ProfileSection = ({
               {recentProject?.map(({ slug, mainImage }, index) => {
                 return (
                   <Link
-                    to={slug.current}
+                    to={`/${slug.current}`}
                     key={index}
                     className="hover:opacity-70"
                   >

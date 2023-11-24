@@ -1,0 +1,9 @@
+.border_color_top_right {
+  background-image: linear-gradient(#d8a171, #d8a171);
+  background-size: 35% 16px;
+  background-position: top right;
+  background-repeat: no-repeat;
+}
+.border_color_top_right:hover {
+  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+}
