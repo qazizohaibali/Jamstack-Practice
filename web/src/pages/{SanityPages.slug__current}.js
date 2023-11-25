@@ -40,8 +40,8 @@ export const query = graphql`
         ...PortfolioHubSection
         ...ProfileHubSection
         ...BlogSectionRefernce
-        ...ProfileFeaturedSection
       }
     }
   }
-`
+  `
+  // ...ProfileFeaturedSection

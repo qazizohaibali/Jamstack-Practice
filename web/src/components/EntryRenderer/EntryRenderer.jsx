@@ -13,7 +13,7 @@ import AboutTwoColumnSection from '../../sections/AboutTwoColumnSection/AboutTwo
 import PortolioHubSection from '../../sections/PortolioHubSection/PortolioHubSection'
 import ProfileHubSection from '../../sections/ProfileHubSection/ProfileHubSection'
 import FeaturedBlogCard from '../FeaturedBlogCard/FeaturedBlogCard'
-import ProfileFeaturedSection from '../../sections/ProfileFeaturedSection/ProfileFeaturedSection'
+// import ProfileFeaturedSection from '../../sections/ProfileFeaturedSection/ProfileFeaturedSection'
 
 export const EntryRenderer = ({ pageBuilderData, ...props }) => {
   return pageBuilderData.map(({ __typename, ...sectionData }, index) => {
@@ -67,14 +67,14 @@ export const EntryRenderer = ({ pageBuilderData, ...props }) => {
             <FeaturedBlogCard key={__typename} {...sectionData} {...props} />
           )
         
-      case 'SanityRelevantProfileFeatured':
-        return (
-          <ProfileFeaturedSection
-            key={__typename}
-            {...sectionData}
-            {...props}
-          />
-        )
+      // case 'SanityRelevantProfileFeatured':
+      //   return (
+      //     <ProfileFeaturedSection
+      //       key={__typename}
+      //       {...sectionData}
+      //       {...props}
+      //     />
+      //   )
 
       default:
         return null
