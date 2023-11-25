@@ -39,13 +39,13 @@ export const FeaturedBlogCard = ({ otherClasses }) => {
 
   return (
     <div className={featuredBlogCardClasses} data-testid="featured-blog-card">
-      <div className="max-w-[1512px] mx-auto xl:px-[100px] lg:[70px] px-4 flex items-stretch lg:flex-row flex-col lg:pt-20 lg:pb-16 pt-10 pb-10">
+      <div className="max-w-[1512px] mx-auto lg:px-[100px] px-4 flex items-stretch lg:flex-row flex-col lg:pt-20 lg:pb-16 pt-10 pb-10 ">
         {featured?.map((node, i) => {
           return (
             <>
               <div className="lg:w-[45%] w-full group">
                 {node?.desktopImage && (
-                  <div className='overflow-hidden'>
+                  <div className='overflow-hidden h-full'>
                     <Image
                       imageData={node?.desktopImage}
                       otherClasses="h-full group-hover:scale-[1.1] duration-150 ease-in"
