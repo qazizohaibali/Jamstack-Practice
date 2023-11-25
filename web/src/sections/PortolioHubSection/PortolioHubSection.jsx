@@ -51,8 +51,6 @@ export const PortolioHubSection = ({ otherClasses }) => {
   // const [allbtn, setAllbtn] = useState(false)
   const [defaultResponse, setDefaultResponse] = useState(nodes)
 
- 
-
   const filterTabs = nodes?.map(({ portfolioCategory, icon, hoverIcon }) => {
     return {
       category: portfolioCategory,
@@ -76,7 +74,6 @@ export const PortolioHubSection = ({ otherClasses }) => {
   }
   const uniqueTabsArray = makeUniqueByRegion(filterTabs)
 
-  
   const tabHandler = (item) => {
     setTab(item)
   }
@@ -100,7 +97,7 @@ export const PortolioHubSection = ({ otherClasses }) => {
         <div className="grid grid-cols-5 lg:px-0 px-4">
           <div
             className={clsx(
-              'flex cursor-pointer justify-center items-end gap-4 pb-6 px-3',
+              'w-[300px] flex cursor-pointer justify-center items-end gap-4 pb-6 px-3',
               tab === 'AllTab'
                 ? 'border-b-[2px] border-[#EBAA70]'
                 : 'border-b-[2px]  border-[#96989A]'
@@ -179,8 +176,8 @@ export const PortolioHubSection = ({ otherClasses }) => {
               return (
                 <div
                   className={clsx(
-                    'flex lg:flex-row flex-col justify-between lg:items-center gap-10',
-                    index % 2 ? 'flex-row-reverse' : 'flex-row'
+                    'flex flex-col justify-between lg:items-center gap-10',
+                    index % 2 ? 'lg:flex-row-reverse' : 'lg:flex-row'
                   )}
                 >
                   <div
@@ -224,9 +221,14 @@ export const PortolioHubSection = ({ otherClasses }) => {
                     </div>
                   </Link>
 
-                  <div className="data-iamge w-full px-4 lg:px-0 lg:w-2/4 gap-5 grid grid-cols-2">
+                  <div className="data-iamge w-full px-4 lg:px-0 lg:w-2/4 gap-5  grid grid-cols-2">
                     {portfolioCardImages.map(({ image }) => {
-                      return <Image imageData={image} otherClasses="" />
+                      return (
+                        <Image
+                          imageData={image}
+                          otherClasses="hover:filter duration-300 ease-in-out transition-all  hover:grayscale-0 grayscale"
+                        />
+                      )
                     })}
                   </div>
                 </div>
