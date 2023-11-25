@@ -71,6 +71,10 @@ const JAMSTACK_SECTIONS = [
     sectionType: 'profileHubSection',
     sectionTitle: 'Profile Hub Section',
   },
+  {
+    sectionType: 'blogHubSectionReference',
+    sectionTitle: 'Blog Hub Section Reference',
+  },
 ]
 
 const JAMSTACK_TEMPLATE = [

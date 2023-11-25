@@ -201,6 +201,16 @@ export default {
           },
           to: [{ type: 'blogSectionReference' }],
         },
+        {
+          title: 'Blog Hub Section Reference',
+          name: 'blogHubSectionReference',
+          type: 'reference',
+          validation: (Rule) => Rule.required(),
+          options: {
+            disableNew: true,
+          },
+          to: [{ type: 'blogHubSectionReference' }],
+        },
 
       ],
     },

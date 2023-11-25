@@ -2,6 +2,7 @@ import ProfileHubSection from './documents/ProfileHubSection'
 import ProfilePage from './documents/ProfilePage'
 import aboutIntroSection from './documents/aboutIntroSection'
 import authors from './documents/authors'
+import blogHubSectionReference from './documents/blogHubSectionReference'
 import blogSectionReference from './documents/blogSectionReference'
 import blogs from './documents/blogs'
 import categories from './documents/categories'
@@ -60,6 +61,7 @@ export const schemaTypes = [
   location,
   experience,
   ProfileHubSection,
+  blogHubSectionReference,
   // objects
   bodyPortableText,
   ourProductCard,
