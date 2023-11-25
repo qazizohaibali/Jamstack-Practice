@@ -9,6 +9,8 @@ import allgray from '../../images/all-gray.svg'
 import chairgray from '../../images/chair-gray.svg'
 import homegray from '../../images/home-gray.svg'
 import sofagray from '../../images/sofa-gray.svg'
+import decogray from '../../images/deco-gray.svg'
+import decobrown from '../../images/deco-brown.svg'
 import allbrown from '../../images/all-brown.svg'
 import chairbrown from '../../images/chair-brown.svg'
 import homebrown from '../../images/home-brown.svg'
@@ -129,8 +131,8 @@ export const PortolioHubSection = ({ otherClasses }) => {
     },
     {
       category: 'Home Decoration',
-      icon: homegray,
-      hoverIcon: homebrown,
+      icon: decogray,
+      hoverIcon: decobrown,
     },
   ]
 
@@ -163,12 +165,20 @@ export const PortolioHubSection = ({ otherClasses }) => {
               ) : tab === 'Home Interior' ? (
                 <img src={sofabrown} alt="" className="w-[25px] h-[25px]" />
               ) : (
-                <img src={homebrown} alt="" className="w-[25px] h-[25px]" />
+                <img src={decobrown} alt="" className="w-[25px] h-[25px]" />
               )}
 
-             <p className='text-[18px] font-normal text-[#EBAA70]'> {tab} </p>
+              <p className="text-[18px] font-normal text-[#EBAA70]"> {tab} </p>
             </div>
-            <Icon icon="arrow-down-white" iconHeight={20} iconWidth={20} otherClasses={clsx("transition-all duration-300 ease-in-out",dropdown?"rotate-180":"rotate-0")} />
+            <Icon
+              icon="arrow-down-white"
+              iconHeight={20}
+              iconWidth={20}
+              otherClasses={clsx(
+                'transition-all duration-300 ease-in-out',
+                dropdown ? 'rotate-180' : 'rotate-0'
+              )}
+            />
           </div>
           <div
             className={clsx(

@@ -2,7 +2,8 @@ import React from 'react'
 import clsx from 'clsx'
 
 export const PortfolioSection = ({
-  otherClasses
+  otherClasses,title
+  ,_rawBody
 }) => {
   const portfolioSectionClasses = clsx(otherClasses);
   

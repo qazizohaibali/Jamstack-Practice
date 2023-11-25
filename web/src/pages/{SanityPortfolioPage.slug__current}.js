@@ -1,16 +1,14 @@
 import { graphql } from 'gatsby'
 import React from 'react'
-import EntryRenderer from '../components/EntryRenderer/EntryRenderer'
 import Layout from '../components/Layout/Layout'
 import Seo from '../components/seo'
+import PortfolioSection from '../sections/PortfolioSection/PortfolioSection'
 
 const IndexPage = (props) => {
-  return (
-    // <Layout isCtaEnabled={true}>
-    //   <EntryRenderer pageBuilderData={props.data.page.pageBuilder} />
-    // </Layout>
-    <></>
-  )
+  const { data } = props
+  const portfolio = data && data.sanityPortfolioPage
+
+  return <Layout>{portfolio && <PortfolioSection {...portfolio} />}</Layout>
 }
 
 export const Head = ({
@@ -23,7 +21,7 @@ export default IndexPage
 
 export const query = graphql`
   query PortfolioPageQuery($id: String!) {
-   page: sanityPortfolioPage(id: { eq: $id }) {
+    page: sanityPortfolioPage(id: { eq: $id }) {
       slug {
         current
       }
@@ -32,10 +30,10 @@ export const query = graphql`
       __typename
       title
       _rawBody
-      hoverIcon{
+      hoverIcon {
         ...CustomImage
       }
-      icon{
+      icon {
         ...CustomImage
       }
       mainImage {
