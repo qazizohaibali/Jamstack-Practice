@@ -1,14 +1,15 @@
 import { graphql } from 'gatsby'
 import React from 'react'
-import EntryRenderer from '../components/EntryRenderer/EntryRenderer'
 import Layout from '../components/Layout/Layout'
 import Seo from '../components/seo'
-import FeaturedBlogCard from '../components/FeaturedBlogCard/FeaturedBlogCard'
+import BlogPostSection from '../sections/BlogPostSection/BlogPostSection'
 
 const IndexPage = (props) => {
+  const { data } = props
+  const post = data && data.page
   return (
     <Layout isCtaEnabled={true}>
-      <FeaturedBlogCard />
+      <BlogPostSection siteMetadata={data?.site?.siteMetadata} {...post}/>
     </Layout>
   )
 }
@@ -34,6 +35,7 @@ export const query = graphql`
       _createdAt
       _updatedAt
       title
+      _rawBody
       publishedAt
       featured
       desktopImage {
@@ -49,6 +51,11 @@ export const query = graphql`
         category
       }
       _rawBody
+    }
+    site {
+      siteMetadata {
+        siteUrl
+      }
     }
   }
 `

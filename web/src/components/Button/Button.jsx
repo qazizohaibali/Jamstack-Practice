@@ -3,7 +3,6 @@ import { graphql, Link } from 'gatsby'
 import clsx from 'clsx'
 
 import './button.scss'
-import Icon from '../Icon/Icon'
 
 export const Button = ({
   label = '',

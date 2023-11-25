@@ -1,16 +1,13 @@
 import React from 'react'
 import clsx from 'clsx'
-import { useMediaPredicate } from 'react-media-hook'
 
 import Icon from '../../components/Icon/Icon'
-
-import { Link } from 'gatsby'
 
 import './footer.scss'
 import Heading from '../Heading/Heading'
 
 export const Footer = ({ otherClasses, toggleFunc }) => {
-  const footerClasses = clsx(otherClasses, 'w-full bg-[#2F3034] relative')
+  const footerClasses = clsx(otherClasses, 'w-full bg-[#2F3034] relative mt-[-2px]')
 
   const Year = new Date().getFullYear()
 

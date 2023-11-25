@@ -1,10 +1,8 @@
 import React from 'react'
 import clsx from 'clsx'
-import image from '../../images/featured-image.png'
 import { Link, graphql, useStaticQuery } from 'gatsby'
 import Image from '../Image/Image'
 import Heading from '../Heading'
-import Icon from '../Icon/Icon'
 
 export const FeaturedBlogCard = ({ otherClasses }) => {
   const featuredBlogCardClasses = clsx(otherClasses, 'bg-[#2F3034]')

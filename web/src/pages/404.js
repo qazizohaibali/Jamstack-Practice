@@ -2,8 +2,6 @@ import * as React from 'react'
 import Seo from '../components/seo'
 import { Layout } from '../components/Layout'
 import { Heading } from '../components/Heading'
-import { Button } from '../components/Button'
-import bottomImage from '../images/404.png'
 import '../styles/404.scss'
 
 const NotFoundPage = () => (

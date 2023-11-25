@@ -17,11 +17,11 @@ const isProd = process.env.NODE_ENV === 'production'
  */
 module.exports = {
   siteMetadata: {
-    title: 'JamStack Practice',
+    title: 'Shaksiyat Interior Design',
     description:
-      'For Practice of JamStack Development',
+      'Provide Professional Interior Design Services',
     author: 'zohaib',
-    siteUrl: 'https://jamstackpractice.com/',
+    siteUrl: 'https://shaksiyat.netlify.app/',
   },
   trailingSlash: 'always',
 
