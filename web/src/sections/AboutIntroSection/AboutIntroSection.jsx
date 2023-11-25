@@ -24,7 +24,7 @@ export const AboutIntroSection = ({
     let text = n.toString()
     return text
   }
-  console.log(numToString)
+ 
   const [counter, setCounter] = useState(false)
 
   return (

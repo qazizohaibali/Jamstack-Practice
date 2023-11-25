@@ -3,14 +3,10 @@ import Navbar from '../Navbar/Navbar'
 import Footer from '../Footer/Footer'
 import Cta from '../Cta/Cta'
 import ContactForm from '../ContactForm/ContactForm'
-// import { useMediaPredicate } from 'react-media-hook'
-
 import clsx from 'clsx'
 
 export const Layout = ({ children, isCtaEnabled }) => {
   const [toggle, setToggle] = useState()
-  // const isDesktop = useMediaPredicate('(min-width: 768px)')
-
   const toggleFunc = (flag) => {
     setToggle(flag)
   }

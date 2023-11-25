@@ -6,7 +6,6 @@ import Seo from '../components/seo'
 import FeaturedBlogCard from '../components/FeaturedBlogCard/FeaturedBlogCard'
 
 const IndexPage = (props) => {
-  console.log("props", props);
   return (
     <Layout isCtaEnabled={true}>
       <FeaturedBlogCard />

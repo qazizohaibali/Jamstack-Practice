@@ -43,4 +43,5 @@ export const query = graphql`
       }
     }
   }
-`
+  `
+  // ...ProfileFeaturedSection
