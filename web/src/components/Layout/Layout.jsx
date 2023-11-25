@@ -4,6 +4,7 @@ import Footer from '../Footer/Footer'
 import Cta from '../Cta/Cta'
 import ContactForm from '../ContactForm/ContactForm'
 import clsx from 'clsx'
+import CustomAnimatedCursor from '../CustomAnimatedCursor/CustomAnimatedCursor'
 
 export const Layout = ({ children, isCtaEnabled }) => {
   const [toggle, setToggle] = useState()
@@ -23,6 +24,7 @@ export const Layout = ({ children, isCtaEnabled }) => {
 
   return (
     <>
+      <CustomAnimatedCursor />
       <Navbar toggleFunc={toggleFunc} />
       <div
         className={clsx(
