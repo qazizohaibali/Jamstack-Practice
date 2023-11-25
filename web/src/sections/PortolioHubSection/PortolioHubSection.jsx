@@ -3,17 +3,27 @@ import clsx from 'clsx'
 import { Link, graphql, useStaticQuery } from 'gatsby'
 import Image from '../../components/Image/Image'
 import Heading from '../../components/Heading'
-
+import Slider from 'react-slick'
 import './portfoliohubsection.scss'
 
 import allgray from '../../images/all-gray.svg'
+import chairgray from '../../images/chair-gray.svg'
+import decogray from '../../images/deco-gray.svg'
+import homegray from '../../images/home-gray.svg'
+import sofagray from '../../images/sofa-gray.svg'
 import allbrown from '../../images/all-brown.svg'
+import chairbrown from '../../images/chair-brown.svg'
+import decobrown from '../../images/deco-brown.svg'
+import homebrown from '../../images/home-brown.svg'
+import sofabrown from '../../images/sofa-brown.svg'
 import RichText from '../../components/RichText/RichText'
+import Button from '../../components/Button'
+import Icon from '../../components/Icon/Icon'
 
 export const PortolioHubSection = ({ otherClasses }) => {
   const portolioHubSectionClasses = clsx(
     otherClasses,
-    'bg-[#2f3034] lg:py-20 py-10 lg:px-[70px]  '
+    'bg-[#2f3034] lg:py-[120px] py-20 lg:px-[70px] '
   )
 
   const {
@@ -47,9 +57,11 @@ export const PortolioHubSection = ({ otherClasses }) => {
     }
   `)
 
-  const [tab, setTab] = useState('AllTab')
+  const [tab, setTab] = useState('Show All')
   // const [allbtn, setAllbtn] = useState(false)
   const [defaultResponse, setDefaultResponse] = useState(nodes)
+
+  const [dropdown, setDropdown] = useState(false)
 
   const filterTabs = nodes?.map(({ portfolioCategory, icon, hoverIcon }) => {
     return {
@@ -76,9 +88,10 @@ export const PortolioHubSection = ({ otherClasses }) => {
 
   const tabHandler = (item) => {
     setTab(item)
+    setDropdown(false)
   }
   useEffect(() => {
-    if (tab === 'AllTab') {
+    if (tab === 'Show All') {
       setDefaultResponse(nodes)
     } else {
       const filterdata = nodes?.filter(({ portfolioCategory }) => {
@@ -87,6 +100,51 @@ export const PortolioHubSection = ({ otherClasses }) => {
       setDefaultResponse(filterdata)
     }
   }, [tab, nodes])
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    arrows: true,
+    // centerMode: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  }
+
+  const mobTabs = [
+    {
+      category: 'Show All',
+      icon: allgray,
+      hoverIcon: allbrown,
+    },
+    {
+      category: 'Villas',
+      icon: homegray,
+      hoverIcon: homebrown,
+    },
+    {
+      category: 'Interior Fit-Out',
+      icon: chairgray,
+      hoverIcon: chairbrown,
+    },
+    {
+      category: 'Home Interior',
+      icon: sofagray,
+      hoverIcon: sofabrown,
+    },
+    {
+      category: 'Home Decoration',
+      icon: homegray,
+      hoverIcon: homebrown,
+    },
+  ]
+
+  const dropdownHandler = () => {
+    if (dropdown) {
+      setDropdown(false)
+    } else {
+      setDropdown(true)
+    }
+  }
 
   return (
     <section
@@ -94,20 +152,76 @@ export const PortolioHubSection = ({ otherClasses }) => {
       data-testid="portolio-hub-section"
     >
       <div className="max-w-[1512px] mx-auto ">
-        <div className="grid grid-cols-5 lg:px-0 px-4">
+        <div
+          className="relative bg-[#222327] mx-6 block lg:hidden group rounded-lg"
+          onClick={dropdownHandler}
+        >
+          <div className="px-4 py-4 flex justify-between relative mt-5">
+            <div className="flex gap-3 items-center">
+              {tab === 'Show All' ? (
+                <img src={allbrown} alt="" className="w-[25px] h-[25px]" />
+              ) : tab === 'Villas' ? (
+                <img src={homebrown} alt="" className="w-[25px] h-[25px]" />
+              ) : tab === 'Interior Fit-Out' ? (
+                <img src={chairbrown} alt="" className="w-[25px] h-[25px]" />
+              ) : tab === 'Home Interior' ? (
+                <img src={sofabrown} alt="" className="w-[25px] h-[25px]" />
+              ) : (
+                <img src={homebrown} alt="" className="w-[25px] h-[25px]" />
+              )}
+
+             <p className='text-[18px] font-normal text-[#EBAA70]'> {tab} </p>
+            </div>
+            <Icon icon="arrow-down-white" iconHeight={20} iconWidth={20} otherClasses={clsx("transition-all duration-300 ease-in-out",dropdown?"rotate-180":"rotate-0")} />
+          </div>
+          <div
+            className={clsx(
+              'absolute mx-auto z-50 rounded-lg bg-[#222327] mt-2 w-full',
+              dropdown ? '!block' : '!hidden'
+            )}
+          >
+            <ul className="w-full ">
+              {mobTabs.map(({ category, icon, hoverIcon }) => {
+                return (
+                  <li className="flex gap-3 px-4 py-3 items-center">
+                    {tab !== category ? (
+                      <img src={icon} alt="" className="w-[25px] h-[25px]" />
+                    ) : (
+                      <img
+                        src={hoverIcon}
+                        alt=""
+                        className="w-[25px] h-[25px]"
+                      />
+                    )}
+                    <p
+                      className={clsx(
+                        ' text-[18px] font-normal',
+                        tab === category ? 'text-[#EBAA70]' : 'text-[#96989A]'
+                      )}
+                      onClick={() => tabHandler(category)}
+                    >
+                      {category}
+                    </p>
+                  </li>
+                )
+              })}
+            </ul>
+          </div>
+        </div>
+        <div className="!hidden  lg:!grid grid-cols-5 lg:px-0 px-4">
           <div
             className={clsx(
               'w-[300px] flex cursor-pointer justify-center items-end gap-4 pb-6 px-3',
-              tab === 'AllTab'
+              tab === 'Show All'
                 ? 'border-b-[2px] border-[#EBAA70]'
                 : 'border-b-[2px]  border-[#96989A]'
             )}
             onClick={() => {
-              setTab('AllTab')
+              setTab('Show All')
             }}
           >
             {' '}
-            {tab === 'AllTab' ? (
+            {tab === 'Show All' ? (
               <img src={allbrown} alt="" className="w-[25px] h-[25px]" />
             ) : (
               <img src={allgray} alt="" className="w-[25px] h-[25px]" />
@@ -115,7 +229,7 @@ export const PortolioHubSection = ({ otherClasses }) => {
             <p
               className={clsx(
                 '',
-                tab === 'AllTab' ? 'text-[#EBAA70]' : 'text-[#96989A]'
+                tab === 'Show All' ? 'text-[#EBAA70]' : 'text-[#96989A]'
               )}
             >
               All
