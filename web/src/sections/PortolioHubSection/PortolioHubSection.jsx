@@ -310,12 +310,12 @@ export const PortolioHubSection = ({ otherClasses }) => {
                     <div className="overflow-hidden">
                       <Image
                         imageData={mainImage}
-                        otherClasses="!h-full !w-full portfolio-main-image relative group group-hover:scale-125 transition-all duration-700 ease-in-out"
+                        otherClasses="!h-full rounded-tr-[30px] !w-full portfolio-main-image relative group group-hover:scale-125 transition-all duration-700 ease-in-out"
                       />
                     </div>
                     <div
                       className={clsx(
-                        '!absolute -mt-[100px] left-0 -translate-y-[50px] !w-full !hidden group-hover:!flex-col group-hover:!flex bg-[#EBAA70] py-7 px-7',
+                        '!absolute  -mt-[100px] left-0 -translate-y-[50px] !w-full !hidden group-hover:lg:!flex-col group-hover:lg:!flex bg-[#EBAA70] py-7 px-7',
                         index % 2 === 0
                           ? '!items-start-start -translate-x-7'
                           : '!items-end translate-x-7'
