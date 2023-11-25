@@ -51,7 +51,7 @@ export const PortolioHubSection = ({ otherClasses }) => {
   // const [allbtn, setAllbtn] = useState(false)
   const [defaultResponse, setDefaultResponse] = useState(nodes)
 
-  console.log('defaultResponse', defaultResponse)
+ 
 
   const filterTabs = nodes?.map(({ portfolioCategory, icon, hoverIcon }) => {
     return {
@@ -76,7 +76,7 @@ export const PortolioHubSection = ({ otherClasses }) => {
   }
   const uniqueTabsArray = makeUniqueByRegion(filterTabs)
 
-  console.log('uniqueTabsArray', uniqueTabsArray)
+  
   const tabHandler = (item) => {
     setTab(item)
   }
