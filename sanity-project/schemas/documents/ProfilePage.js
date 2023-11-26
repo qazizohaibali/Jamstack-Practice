@@ -45,16 +45,15 @@ export default {
             title: 'Page Builder',
             of: [
                 {
-                    title: 'Hero Section',
-                    name: 'heroSection',
+                    title: 'Mini Hero Section',
+                    name: 'miniHeroSection',
                     type: 'reference',
                     validation: (Rule) => Rule.required(),
                     options: {
                         disableNew: true,
                     },
-                    to: [{ type: 'heroSection' }],
-
-                }]
+                    to: [{ type: 'miniHeroSection' }],
+                },]
         },
         {
             title: 'Image',
