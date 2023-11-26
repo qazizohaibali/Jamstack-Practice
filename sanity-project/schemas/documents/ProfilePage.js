@@ -56,6 +56,12 @@ export default {
             type: 'string',
         },
         {
+            title: 'Is Top Designer',
+            name: 'isTopDesigner',
+            type: 'boolean',
+            initialValue: true,
+        },
+        {
             title: 'Short Description',
             name: 'shortDescription',
             type: 'bodyPortableText'
