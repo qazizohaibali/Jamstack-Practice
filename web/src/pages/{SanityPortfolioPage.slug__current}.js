@@ -29,6 +29,7 @@ export const query = graphql`
       metaDescription
       __typename
       title
+      mainHeading
       _rawBody
       hoverIcon {
         ...CustomImage

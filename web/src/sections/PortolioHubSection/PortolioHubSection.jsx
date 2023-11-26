@@ -31,6 +31,7 @@ export const PortolioHubSection = ({ otherClasses }) => {
       allSanityPortfolioPage {
         nodes {
           title
+          mainHeading
           slug {
             current
           }
@@ -288,6 +289,7 @@ export const PortolioHubSection = ({ otherClasses }) => {
                 mainImage,
                 portfolioCardImages,
                 title,
+                mainHeading,
                 _rawShortDescription,
                 slug: { current },
               },
@@ -306,7 +308,7 @@ export const PortolioHubSection = ({ otherClasses }) => {
                     )}
                   >
                     <Heading type="h2" otherClasses="text-[22px] lg:[36px]">
-                      {title}
+                      {mainHeading}
                     </Heading>
                     <RichText
                       richText={_rawShortDescription}

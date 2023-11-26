@@ -5,6 +5,7 @@ export const PortfolioSection = ({
   otherClasses,
   title,
   _rawBody,
+  mainHeading,
   mainImage,
   portfolioCardImages,
   portfolioCategory,
