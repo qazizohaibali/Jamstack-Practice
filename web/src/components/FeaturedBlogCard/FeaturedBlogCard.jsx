@@ -65,7 +65,8 @@ export const FeaturedBlogCard = ({ otherClasses }) => {
                   {node?.title}
                 </Heading>
                 <Link
-                  to={node?.slug.current}
+                  
+                  to={`/${node?.slug.current}`}
                   className="text-[#D99F6F] uppercase lg:text-2xl text-lg font-semibold font-Montserrat flex items-center"
                 >
                   Read More

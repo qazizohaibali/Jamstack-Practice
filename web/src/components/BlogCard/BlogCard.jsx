@@ -34,7 +34,7 @@ export const BlogCard = ({ otherClasses, slug, mobileImage, title }) => {
               {title}
             </Heading>
             <Link
-              to={slug.current}
+              to={`/${slug.current}`}
               className="text-[#D99F6F] uppercase text-lg font-semibold font-Montserrat flex items-center"
             >
               Read More
