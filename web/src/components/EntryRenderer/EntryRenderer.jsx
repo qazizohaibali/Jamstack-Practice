@@ -14,8 +14,6 @@ import PortolioHubSection from '../../sections/PortolioHubSection/PortolioHubSec
 import ProfileHubSection from '../../sections/ProfileHubSection/ProfileHubSection'
 import FeaturedBlogCard from '../FeaturedBlogCard/FeaturedBlogCard'
 import BlogHubSection from '../../sections/BlogHubSection/BlogHubSection'
-// import ProfileFeaturedSection from '../../sections/ProfileFeaturedSection/ProfileFeaturedSection'
-
 export const EntryRenderer = ({ pageBuilderData, ...props }) => {
   return pageBuilderData.map(({ __typename, ...sectionData }, index) => {
     switch (__typename) {
@@ -62,25 +60,11 @@ export const EntryRenderer = ({ pageBuilderData, ...props }) => {
         return (
           <ProfileHubSection key={__typename} {...sectionData} {...props} />
         )
-        
-        case 'SanityBlogSectionReference':
-          return (
-            <FeaturedBlogCard key={__typename} {...sectionData} {...props} />
-          )
-        case 'SanityBlogHubSectionReference':
-          return (
-            <BlogHubSection key={__typename} {...sectionData} {...props} />
-          )
-        
-      // case 'SanityRelevantProfileFeatured':
-      //   return (
-      //     <ProfileFeaturedSection
-      //       key={__typename}
-      //       {...sectionData}
-      //       {...props}
-      //     />
-      //   )
 
+      case 'SanityBlogSectionReference':
+        return <FeaturedBlogCard key={__typename} {...sectionData} {...props} />
+      case 'SanityBlogHubSectionReference':
+        return <BlogHubSection key={__typename} {...sectionData} {...props} />
       default:
         return null
     }
