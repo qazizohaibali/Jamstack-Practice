@@ -30,7 +30,7 @@ export const query = graphql`
   query ProfilePageSection($id: String!) {
     sanityProfilePage(id: { eq: $id }) {
       pageBuilder{
-        ...HeroSection
+        ...MiniHeroSection
       }
       slug {
         current
