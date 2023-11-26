@@ -3,14 +3,17 @@ import React from 'react'
 import ProfileSection from '../sections/ProfileSection/ProfileSection'
 import Layout from '../components/Layout/Layout'
 import Seo from '../components/seo'
+import EntryRenderer from '../components/EntryRenderer/EntryRenderer'
 
 const ProfilePageTemplate = (props) => {
   const { data } = props
   const profile = data && data.sanityProfilePage
 
   return (
-    <Layout>
+    <Layout isCtaEnabled={true}>
+      <EntryRenderer pageBuilderData={profile.pageBuilder} />
       {profile && <ProfileSection {...profile} />}
+
     </Layout>
   )
 }
@@ -26,6 +29,9 @@ export default ProfilePageTemplate;
 export const query = graphql`
   query ProfilePageSection($id: String!) {
     sanityProfilePage(id: { eq: $id }) {
+      pageBuilder{
+        ...HeroSection
+      }
       slug {
         current
       }
@@ -35,6 +41,7 @@ export const query = graphql`
       title
       publishedAt
       featured
+      isTopDesigner
       image {
         ...CustomImage
       }
