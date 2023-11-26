@@ -39,82 +39,96 @@ export default {
             name: 'metaDescription',
             type: 'text',
         },
-
         {
-            title: 'Image',
-            name: 'image',
-            type: 'customImage',
-        },
-        {
-            title: 'Name',
-            name: 'name',
-            type: 'string',
-        },
-        {
-            title: 'At Position',
-            name: 'atPosition',
-            type: 'string',
-        },
-        {
-            title: 'Is Top Designer',
-            name: 'isTopDesigner',
-            type: 'boolean',
-            initialValue: true,
-        },
-        {
-            title: 'Short Description',
-            name: 'shortDescription',
-            type: 'bodyPortableText'
-        },
-        {
-            title: 'Location',
-            name: 'location',
-            type: 'reference',
-            validation: (Rule) => Rule.required(),
-            options: {
-                disableNew: true,
-            },
-            to: [{ type: 'location' }],
-        },
-        {
-            title: 'Experience',
-            name: 'experience',
-            type: 'reference',
-            validation: (Rule) => Rule.required(),
-            options: {
-                disableNew: true,
-            },
-            to: [{ type: 'experience' }],
-        },
-        {
-            title: 'Top Project',
-            name: 'topProject',
+            name: 'pageBuilder',
             type: 'array',
-            validation: (Rule) => Rule.required(),
-            options: {
-                disableNew: true,
+            title: 'Page Builder',
+            of: [
+                {
+                    title: 'Hero Section',
+                    name: 'heroSection',
+                    type: 'reference',
+                    validation: (Rule) => Rule.required(),
+                    options: {
+                        disableNew: true,
+                    },
+                    to: [{ type: 'heroSection' }],
+                },
+                {
+                    title: 'Image',
+                    name: 'image',
+                    type: 'customImage',
+                },
+                {
+                    title: 'Name',
+                    name: 'name',
+                    type: 'string',
+                },
+                {
+                    title: 'At Position',
+                    name: 'atPosition',
+                    type: 'string',
+                },
+                {
+                    title: 'Is Top Designer',
+                    name: 'isTopDesigner',
+                    type: 'boolean',
+                    initialValue: true,
+                },
+                {
+                    title: 'Short Description',
+                    name: 'shortDescription',
+                    type: 'bodyPortableText'
+                },
+                {
+                    title: 'Location',
+                    name: 'location',
+                    type: 'reference',
+                    validation: (Rule) => Rule.required(),
+                    options: {
+                        disableNew: true,
+                    },
+                    to: [{ type: 'location' }],
+                },
+                {
+                    title: 'Experience',
+                    name: 'experience',
+                    type: 'reference',
+                    validation: (Rule) => Rule.required(),
+                    options: {
+                        disableNew: true,
+                    },
+                    to: [{ type: 'experience' }],
+                },
+                {
+                    title: 'Top Project',
+                    name: 'topProject',
+                    type: 'array',
+                    validation: (Rule) => Rule.required(),
+                    options: {
+                        disableNew: true,
+                    },
+                    of: [{ type: 'reference', to: [{ type: 'portfolioPage' }] }],
+                },
+                {
+                    title: 'Recent Project',
+                    name: 'recentProject',
+                    type: 'array',
+                    validation: (Rule) => Rule.required(),
+                    options: {
+                        disableNew: true,
+                    },
+                    of: [{ type: 'reference', to: [{ type: 'portfolioPage' }] }],
+                },
+            ],
+            preview: {
+                select: {
+                    title: 'title',
+                },
+                prepare({ title = 'No title' }) {
+                    return {
+                        title,
+                    }
+                },
             },
-            of: [{ type: 'reference', to: [{ type: 'portfolioPage' }] }],
-        },
-        {
-            title: 'Recent Project',
-            name: 'recentProject',
-            type: 'array',
-            validation: (Rule) => Rule.required(),
-            options: {
-                disableNew: true,
-            },
-            of: [{ type: 'reference', to: [{ type: 'portfolioPage' }] }],
-        },
-    ],
-    preview: {
-        select: {
-            title: 'title',
-        },
-        prepare({ title = 'No title' }) {
-            return {
-                title,
-            }
-        },
-    },
-}
+        }
