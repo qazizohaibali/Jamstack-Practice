@@ -20,6 +20,11 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
+      title: 'Main Heading',
+      name: 'mainHeading',
+      type: 'string',
+    },
+    {
       title: 'Slug',
       description: 'Exclude leading and trailing backslashes',
       name: 'slug',
