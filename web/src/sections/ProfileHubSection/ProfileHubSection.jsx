@@ -25,6 +25,7 @@ export const ProfileHubSection = ({
           image {
             ...CustomImage
           }
+          isTopDesigner
           slug {
             current
           }
@@ -37,6 +38,11 @@ export const ProfileHubSection = ({
       }
     }
   `)
+  const isTopDesigner_dest = nodes.filter((node) => node.isTopDesigner === true)
+
+  const not_is_TopDesigner_dest = nodes.filter(
+    (node) => node.isTopDesigner === false
+  )
   return (
     <section
       className={profileHubSectionClasses}
@@ -46,23 +52,43 @@ export const ProfileHubSection = ({
         <div className="flex flex-col gap-20">
           <Heading type="h2">{topHeading}</Heading>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-            {nodes?.map(
-              ({ image, slug, name, atPosition, location }, index) => {
-                return (
-                  <ProfileHubCard
-                    key={index}
-                    slug={slug}
-                    image={image}
-                    name={name}
-                    atPosition={atPosition}
-                    location={location}
-                  />
-                )
-              }
-            )}
+            {isTopDesigner_dest &&
+              isTopDesigner_dest?.map(
+                ({ image, slug, name, atPosition, location }, index) => {
+                  return (
+                    <ProfileHubCard
+                      key={index}
+                      slug={slug}
+                      image={image}
+                      name={name}
+                      atPosition={atPosition}
+                      location={location}
+                    />
+                  )
+                }
+              )}
           </div>
         </div>
-        <Heading type="h2">{allHeading}</Heading>
+        <div className="flex flex-col gap-20">
+          <Heading type="h2">{allHeading}</Heading>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            {not_is_TopDesigner_dest &&
+              not_is_TopDesigner_dest?.map(
+                ({ image, slug, name, atPosition, location }, index) => {
+                  return (
+                    <ProfileHubCard
+                      key={index}
+                      slug={slug}
+                      image={image}
+                      name={name}
+                      atPosition={atPosition}
+                      location={location}
+                    />
+                  )
+                }
+              )}
+          </div>
+        </div>
         <div className="flex flex-col md:flex-row gap-10 justify-center items-center">
           <Button
             {...seeAllButton}
