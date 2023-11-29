@@ -1,0 +1,23 @@
+.portfolio-content {
+  // backdrop-filter: blur(50px);
+  background: rgba( 255, 255, 255, 0.4 );
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.portfolio-richtext{
+    >p{
+        color: #363636;
+        font-size: 18px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin-bottom: 12px;
+    }
+}
+
+.portfolio-bodytext{
+    >p{
+
+    }
+}

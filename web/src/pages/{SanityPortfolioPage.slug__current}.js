@@ -6,9 +6,15 @@ import PortfolioSection from '../sections/PortfolioSection/PortfolioSection'
 
 const IndexPage = (props) => {
   const { data } = props
-  const portfolio = data && data.sanityPortfolioPage
-
-  return <Layout>{portfolio && <PortfolioSection {...portfolio} />}</Layout>
+  const portfolio = data && data.page
+  return (
+    <Layout isCtaEnabled={true}>
+      <PortfolioSection
+        siteMetadata={data?.site?.siteMetadata}
+        {...portfolio}
+      />
+    </Layout>
+  )
 }
 
 export const Head = ({
@@ -29,6 +35,7 @@ export const query = graphql`
       metaDescription
       __typename
       title
+
       mainHeading
       _rawBody
       hoverIcon {

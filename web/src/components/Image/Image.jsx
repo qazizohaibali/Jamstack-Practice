@@ -6,10 +6,9 @@ import { graphql } from 'gatsby'
 export const Image = ({ imageData, otherClasses, ...props }) => {
   const imageClasses = clsx(otherClasses)
 
-  const {
-    asset: { gatsbyImageData },
-    title = '',
-  } = imageData
+  const { asset, title = '' } = imageData
+  const { gatsbyImageData } = asset ?? {}
+  if (!gatsbyImageData) return null
 
   return (
     <GatsbyImage
