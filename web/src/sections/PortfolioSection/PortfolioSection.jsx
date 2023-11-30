@@ -19,20 +19,29 @@ export const PortfolioSection = ({
   _rawDescription,
 }) => {
   const portfolioSectionClasses = clsx(otherClasses, 'bg-[#424242]')
-
+  const halfWayIndex = Math.round(portfolioCardImages.length / 3)
+  const firstPartOfArray = portfolioCardImages.slice(0, halfWayIndex)
+  const secondPartOfArray = portfolioCardImages.slice(
+    halfWayIndex,
+    halfWayIndex + halfWayIndex
+  )
+  const thirdPartOfArray = portfolioCardImages.slice(
+    halfWayIndex + halfWayIndex,
+    portfolioCardImages.length
+  )
   return (
     <section
       className={portfolioSectionClasses}
       data-testid="portfolio-section"
     >
-      <div className="relative">
+      <div className="!relative">
         {mainImage && (
           <Image
             imageData={mainImage}
-            otherClasses="absolute top-0 left-0 h-full w-full"
+            otherClasses="!absolute top-0 left-0 h-full w-full"
           />
         )}{' '}
-        <div className="relative py-[180px] lg:px-[70px] ">
+        <div className="!relative py-[180px] lg:px-[70px] ">
           <div className="max-w-[670px] p-[50px] portfolio-content">
             <p className="uppercase font-semibold text-[#2e3430] text-[20px] mb-3">
               {title}
@@ -86,17 +95,42 @@ export const PortfolioSection = ({
               </div>
             </div>
             <div className="w-10 h-10 absolute bottom-5 right-5 z-0 bg-[#2e3034]"></div>
-            <div className='absolute p-[30px] top-0 left-0 z-50'>
-             <div className='flex '>
-              <div className='h-16 w-16 rounded-full bg-pink-500'> </div>
-              <div className='h-16 w-16 rounded-full bg-white -ml-2'> </div>
-              <div className='h-16 w-16 rounded-full bg-green-400 -ml-2'> </div>
-              <div className='h-16 w-16 rounded-full bg-slate-600 -ml-2'> </div>
-              <div className='h-16 w-16 rounded-full bg-blue-300 -ml-2'> </div>
-             </div>
-             <Heading type="h3" otherClasses="text-[24px] mt-3 font-Garamond" >Our Happy Clients</Heading>
+            <div className="absolute p-[30px] top-0 left-0 z-50">
+              <div className="flex ">
+                <div className="h-16 w-16 rounded-full bg-pink-500"> </div>
+                <div className="h-16 w-16 rounded-full bg-white -ml-2"> </div>
+                <div className="h-16 w-16 rounded-full bg-green-400 -ml-2">
+                  {' '}
+                </div>
+                <div className="h-16 w-16 rounded-full bg-slate-600 -ml-2">
+                  {' '}
+                </div>
+                <div className="h-16 w-16 rounded-full bg-blue-300 -ml-2">
+                  {' '}
+                </div>
+              </div>
+              <Heading type="h3" otherClasses="text-[24px] mt-3 font-Garamond">
+                Our Happy Clients
+              </Heading>
             </div>
           </div>
+        </div>
+      </div>
+      <div className="grid grid-cols-3 pt-20">
+        <div>
+          {firstPartOfArray.map(({ image }) => {
+            return <Image imageData={image} otherClasses="" />
+          })}
+        </div>
+        <div>
+          {secondPartOfArray.map(({ image }) => {
+            return <Image imageData={image} otherClasses="" />
+          })}
+        </div>
+        <div>
+          {thirdPartOfArray.map(({ image }) => {
+            return <Image imageData={image} otherClasses="" />
+          })}
         </div>
       </div>
     </section>
