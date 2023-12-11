@@ -19,6 +19,7 @@ import pages from './documents/pages'
 import parallaxSection from './documents/parallaxSection'
 import portfolioHubSection from './documents/portfolioHubSection'
 import portfolioPage from './documents/portfolioPage'
+import servicesAnimatedSection from './documents/servicesAnimatedSection'
 import servicesHeroSection from './documents/servicesHeroSection'
 import servicesSection from './documents/servicesSection'
 import servicesTwoColumn from './documents/servicesTwoColumn'
@@ -68,6 +69,7 @@ export const schemaTypes = [
   servicesHeroSection,
   parallaxSection,
   servicesTwoColumn,
+  servicesAnimatedSection,
   // objects
   bodyPortableText,
   ourProductCard,

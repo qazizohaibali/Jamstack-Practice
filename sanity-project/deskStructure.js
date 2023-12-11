@@ -87,6 +87,10 @@ const JAMSTACK_SECTIONS = [
     sectionType: 'servicesTwoColumn',
     sectionTitle: 'Services Two Column',
   },
+  {
+    sectionType: 'servicesAnimatedSection',
+    sectionTitle: 'Services Animated Section',
+  },
 ]
 
 const JAMSTACK_TEMPLATE = [
