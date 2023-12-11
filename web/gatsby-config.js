@@ -38,7 +38,6 @@ module.exports = {
     'gatsby-plugin-sass',
     'gatsby-plugin-postcss',
     'gatsby-plugin-sharp',
-    'gatsby-plugin-advanced-sitemap',
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
