@@ -16,6 +16,7 @@ import miniHeroSection from './documents/miniHeroSection'
 import ourProductsSection from './documents/ourProductsSection'
 import ourProjectsSection from './documents/ourProjectsSection'
 import pages from './documents/pages'
+import parallaxSection from './documents/parallaxSection'
 import portfolioHubSection from './documents/portfolioHubSection'
 import portfolioPage from './documents/portfolioPage'
 import servicesHeroSection from './documents/servicesHeroSection'
@@ -64,6 +65,7 @@ export const schemaTypes = [
   ProfileHubSection,
   blogHubSectionReference,
   servicesHeroSection,
+  parallaxSection,
   // objects
   bodyPortableText,
   ourProductCard,

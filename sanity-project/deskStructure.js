@@ -79,6 +79,10 @@ const JAMSTACK_SECTIONS = [
     sectionType: 'servicesHeroSection',
     sectionTitle: 'Services Hero Section',
   },
+  {
+    sectionType: 'parallaxSection',
+    sectionTitle: 'Parallax Section',
+  },
 ]
 
 const JAMSTACK_TEMPLATE = [
