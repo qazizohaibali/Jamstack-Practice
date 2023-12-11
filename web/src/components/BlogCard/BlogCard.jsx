@@ -16,6 +16,7 @@ export const BlogCard = ({ otherClasses, slug, mobileImage, title }) => {
     >
       <>
         <div className="">
+          
           <div className="w-full group">
             {mobileImage && (
               <div className="overflow-hidden">

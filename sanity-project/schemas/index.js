@@ -18,6 +18,7 @@ import ourProjectsSection from './documents/ourProjectsSection'
 import pages from './documents/pages'
 import portfolioHubSection from './documents/portfolioHubSection'
 import portfolioPage from './documents/portfolioPage'
+import servicesHeroSection from './documents/servicesHeroSection'
 import servicesSection from './documents/servicesSection'
 import socialMediaSection from './documents/socialMediaSection'
 import twoColumnSection from './documents/twoColumnSection'
@@ -62,6 +63,7 @@ export const schemaTypes = [
   experience,
   ProfileHubSection,
   blogHubSectionReference,
+  servicesHeroSection,
   // objects
   bodyPortableText,
   ourProductCard,

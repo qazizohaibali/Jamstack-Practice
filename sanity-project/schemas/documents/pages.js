@@ -42,6 +42,16 @@ export default {
       title: 'Page Builder',
       of: [
         {
+          title: 'Services Hero Section',
+          name: 'servicesHeroSection',
+          type: 'reference',
+          validation: (Rule) => Rule.required(),
+          options: {
+            disableNew: true,
+          },
+          to: [{type: 'servicesHeroSection'}],
+        },
+        {
           title: 'Hero Section',
           name: 'heroSection',
           type: 'reference',
@@ -49,7 +59,7 @@ export default {
           options: {
             disableNew: true,
           },
-          to: [{ type: 'heroSection' }],
+          to: [{type: 'heroSection'}],
         },
         {
           title: 'Intro Section',
@@ -59,7 +69,7 @@ export default {
           options: {
             disableNew: true,
           },
-          to: [{ type: 'introSection' }],
+          to: [{type: 'introSection'}],
         },
         {
           title: 'Services Section',
@@ -69,7 +79,7 @@ export default {
           options: {
             disableNew: true,
           },
-          to: [{ type: 'servicesSection' }],
+          to: [{type: 'servicesSection'}],
         },
         {
           title: 'Our Projects Section',
@@ -79,7 +89,7 @@ export default {
           options: {
             disableNew: true,
           },
-          to: [{ type: 'ourProjectsSection' }],
+          to: [{type: 'ourProjectsSection'}],
         },
         {
           title: 'Faqs Section',
@@ -89,7 +99,7 @@ export default {
           options: {
             disableNew: true,
           },
-          to: [{ type: 'faqsSection' }],
+          to: [{type: 'faqsSection'}],
         },
         {
           title: 'Our Products Section',
@@ -99,7 +109,7 @@ export default {
           options: {
             disableNew: true,
           },
-          to: [{ type: 'ourProductsSection' }],
+          to: [{type: 'ourProductsSection'}],
         },
         {
           title: 'Portfolio Hub Section',
@@ -109,7 +119,7 @@ export default {
           options: {
             disableNew: true,
           },
-          to: [{ type: 'portfolioHubSection' }],
+          to: [{type: 'portfolioHubSection'}],
         },
         {
           title: 'Social Media Section',
@@ -119,7 +129,7 @@ export default {
           options: {
             disableNew: true,
           },
-          to: [{ type: 'socialMediaSection' }],
+          to: [{type: 'socialMediaSection'}],
         },
         {
           title: 'Mini Hero Section',
@@ -129,7 +139,7 @@ export default {
           options: {
             disableNew: true,
           },
-          to: [{ type: 'miniHeroSection' }],
+          to: [{type: 'miniHeroSection'}],
         },
         {
           title: 'Featured Text Section',
@@ -139,7 +149,7 @@ export default {
           options: {
             disableNew: true,
           },
-          to: [{ type: 'featuredTextSection' }],
+          to: [{type: 'featuredTextSection'}],
         },
         {
           title: 'About Intro Section',
@@ -149,7 +159,7 @@ export default {
           options: {
             disableNew: true,
           },
-          to: [{ type: 'aboutIntroSection' }],
+          to: [{type: 'aboutIntroSection'}],
         },
         {
           title: 'About Two Column Section',
@@ -159,7 +169,7 @@ export default {
           options: {
             disableNew: true,
           },
-          to: [{ type: 'twoColumnSection' }],
+          to: [{type: 'twoColumnSection'}],
         },
         {
           title: 'Location',
@@ -169,7 +179,7 @@ export default {
           options: {
             disableNew: true,
           },
-          to: [{ type: 'location' }],
+          to: [{type: 'location'}],
         },
         {
           title: 'Experience',
@@ -179,7 +189,7 @@ export default {
           options: {
             disableNew: true,
           },
-          to: [{ type: 'experience' }],
+          to: [{type: 'experience'}],
         },
         {
           title: 'Profile Hub Section',
@@ -189,7 +199,7 @@ export default {
           options: {
             disableNew: true,
           },
-          to: [{ type: 'profileHubSection' }],
+          to: [{type: 'profileHubSection'}],
         },
         {
           title: 'blog Section Reference',
@@ -199,7 +209,7 @@ export default {
           options: {
             disableNew: true,
           },
-          to: [{ type: 'blogSectionReference' }],
+          to: [{type: 'blogSectionReference'}],
         },
         {
           title: 'Blog Hub Section Reference',
@@ -209,9 +219,8 @@ export default {
           options: {
             disableNew: true,
           },
-          to: [{ type: 'blogHubSectionReference' }],
+          to: [{type: 'blogHubSectionReference'}],
         },
-
       ],
     },
   ],
@@ -219,7 +228,7 @@ export default {
     select: {
       title: 'title',
     },
-    prepare({ title = 'No title' }) {
+    prepare({title = 'No title'}) {
       return {
         title,
       }
