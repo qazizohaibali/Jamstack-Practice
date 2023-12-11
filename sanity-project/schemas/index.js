@@ -21,6 +21,7 @@ import portfolioHubSection from './documents/portfolioHubSection'
 import portfolioPage from './documents/portfolioPage'
 import servicesHeroSection from './documents/servicesHeroSection'
 import servicesSection from './documents/servicesSection'
+import servicesTwoColumn from './documents/servicesTwoColumn'
 import socialMediaSection from './documents/socialMediaSection'
 import twoColumnSection from './documents/twoColumnSection'
 import bodyPortableText from './objects/bodyPortableText'
@@ -66,6 +67,7 @@ export const schemaTypes = [
   blogHubSectionReference,
   servicesHeroSection,
   parallaxSection,
+  servicesTwoColumn,
   // objects
   bodyPortableText,
   ourProductCard,

@@ -83,6 +83,10 @@ const JAMSTACK_SECTIONS = [
     sectionType: 'parallaxSection',
     sectionTitle: 'Parallax Section',
   },
+  {
+    sectionType: 'servicesTwoColumn',
+    sectionTitle: 'Services Two Column',
+  },
 ]
 
 const JAMSTACK_TEMPLATE = [
