@@ -52,8 +52,8 @@ export default {
           to: [{type: 'servicesHeroSection'}],
         },
         {
-          title: 'parallaxSection',
-          name: 'Parallax Section',
+          title: 'Parallax Section',
+          name: 'parallaxSection',
           type: 'reference',
           validation: (Rule) => Rule.required(),
           options: {
