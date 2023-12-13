@@ -29,7 +29,7 @@
     @apply font-Montserrat text-[14px] leading-[18px] font-bold  tracking-[0.42px] uppercase text-typography_body;
   }
   p {
-    @apply font-Montserrat text-base leading-6 font-normal text-typography_body;
+    @apply font-Montserrat text-base leading-6 font-normal text-typography_heading_white;
   }
   largeText {
     @apply text-[75px] leading-[88.88px] font-semibold tracking-[1.5px] font-Garamond;
