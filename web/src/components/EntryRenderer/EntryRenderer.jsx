@@ -14,7 +14,9 @@ import PortolioHubSection from '../../sections/PortolioHubSection/PortolioHubSec
 import ProfileHubSection from '../../sections/ProfileHubSection/ProfileHubSection'
 import FeaturedBlogCard from '../FeaturedBlogCard/FeaturedBlogCard'
 import BlogHubSection from '../../sections/BlogHubSection/BlogHubSection'
+import ServicesHeroSection from '../../sections/ServicesHeroSection/ServicesHeroSection'
 export const EntryRenderer = ({ pageBuilderData, ...props }) => {
+  console.log('pagebuilder', pageBuilderData)
   return pageBuilderData.map(({ __typename, ...sectionData }, index) => {
     switch (__typename) {
       case 'SanityHeroSection':
@@ -60,7 +62,10 @@ export const EntryRenderer = ({ pageBuilderData, ...props }) => {
         return (
           <ProfileHubSection key={__typename} {...sectionData} {...props} />
         )
-
+      case 'SanityServicesHeroSection':
+        return (
+          <ServicesHeroSection key={__typename} {...sectionData} {...props} />
+        )
       case 'SanityBlogSectionReference':
         return <FeaturedBlogCard key={__typename} {...sectionData} {...props} />
       case 'SanityBlogHubSectionReference':
