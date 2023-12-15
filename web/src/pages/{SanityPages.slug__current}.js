@@ -44,8 +44,8 @@ export const query = graphql`
         ...ServicesHeroSection
         ...ServicesTwoColumn
         ...ServicesAnimatedSection
+        ...ParallaxSection
       }
     }
   }
-  `
-  // ...ParallaxSection
+`

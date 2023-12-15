@@ -69,10 +69,10 @@ export const EntryRenderer = ({ pageBuilderData, ...props }) => {
         return (
           <ServicesHeroSection key={__typename} {...sectionData} {...props} />
         )
-      // case 'SanityParallaxSection':
-      //   return (
-      //     <ParallaxSection key={__typename} {...sectionData} {...props} />
-      //   )
+      case 'SanityParallaxSection':
+        return (
+          <ParallaxSection key={__typename} {...sectionData} {...props} />
+        )
       case 'SanityServicesTwoColumn':
         return (
           <ServicesTwoColumnSection key={__typename} {...sectionData} {...props} />
