@@ -43,6 +43,7 @@ export const query = graphql`
         ...BlogHubSectionReference
         ...ServicesHeroSection
         ...ServicesTwoColumn
+        ...ServicesAnimatedSection
       }
     }
   }
