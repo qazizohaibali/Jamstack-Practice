@@ -4,6 +4,7 @@ import './navbar.scss'
 import Heading from '../Heading/Heading'
 import Icon from '../Icon/Icon'
 import TopBar from '../TopBar/TopBar'
+import { Link } from 'gatsby'
 
 export const Navbar = ({ otherClasses, toggleFunc }) => {
   const navbarClasses = clsx(
@@ -23,8 +24,8 @@ const [active,setActive] = useState(false)
 
   return (
     <nav className={navbarClasses} id="navbar" data-testid="navbar">
-      <Heading type="h4" otherClasses="mt-[25px] text-white">
-        Shakseyat
+      <Heading type="h2" otherClasses="mt-[25px] text-white">
+        <Link to='/'>Shakseyat</Link>
       </Heading>
       <input type="checkbox" id="active" onClick={handleToggle} className=''/>
       <label for="active" class="menu-btn">
@@ -37,19 +38,22 @@ const [active,setActive] = useState(false)
       <div class="wrapper">
         <ul>
           <li>
-            <a href="#">Home</a>
+            <Link to="/">Home</Link>
           </li>
           <li>
-            <a href="#">About</a>
+            <Link to="/about">About</Link>
           </li>
           <li>
-            <a href="#">Services</a>
+            <Link to="/services">Services</Link>
           </li>
           <li>
-            <a href="#">Gallery</a>
+            <Link to="/blogs">Blogs</Link>
           </li>
           <li>
-            <a href="#">Feedback</a>
+            <Link to="/portfolio">Portfolio</Link>
+          </li>
+          <li>
+            <Link to="/profile-hub">Our Team</Link>
           </li>
         </ul>
       </div>

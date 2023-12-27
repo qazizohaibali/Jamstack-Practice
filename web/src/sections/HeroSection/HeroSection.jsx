@@ -60,7 +60,7 @@ export const HeroSection = ({
         <div className='absolute flex-col flex px-[30px] -translate-y-[550px] text-[white] md:px-[100px]'>
         <Heading
               type="h4"
-              otherClasses="text-[80px]  mx-auto leading-[80px]"
+              otherClasses="sm:text-[80px] text-[60px] leading-[70px] mx-auto sm:leading-[80px]"
             >
               {mainHeading}
             </Heading>

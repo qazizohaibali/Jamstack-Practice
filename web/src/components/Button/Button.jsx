@@ -17,7 +17,7 @@ export const Button = ({
   const buttonClasses = clsx(
     otherClasses,
     variant === 'primary' &&
-      `px-8 py-5 primary_button text-base font-Montserrat font-medium text-white leading-6 uppercase border-[#2F3034] hover:bg-[#2F3034] hover:border-white  border-2`,
+      `px-8 py-5 primary_button text-base font-Montserrat font-medium text-white leading-6 uppercase border-[#2F3034] hover:bg-opacity-50 border-2`,
     variant === 'secondary' &&
       `px-8 py-5 secondary_button text-base font-Montserrat font-medium text-white leading-6 uppercase`,
     variant === 'fill-white' &&
